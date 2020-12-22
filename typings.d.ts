@@ -1,1 +1,2 @@
-declare module 'lodash';
+declare module "lodash";
+declare module "netlify-identity-widget";

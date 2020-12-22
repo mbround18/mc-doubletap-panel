@@ -1,6 +1,7 @@
 <template>
   <div class="container">
     <div>
+      <div id="netlify-modal"></div>
       <h1 class="title">
         Minecraft Graphql Interface
       </h1>
@@ -17,6 +18,7 @@ import Vue from 'vue'
 import Component from 'vue-class-component'
 import { request, gql } from 'graphql-request'
 import {merge} from 'lodash'
+import * as netlifyIdentity from 'netlify-identity-widget';
 
 @Component
 export default class Counter extends Vue {
@@ -37,6 +39,13 @@ export default class Counter extends Vue {
     request('http://localhost:8101/graphql', query).then((data) => merge(this.world, data))  
   }
 
+  mounted() {
+    netlifyIdentity.init({
+      container: '#netlify-modal', 
+      locale: 'en' 
+    });
+    netlifyIdentity.open();
+  }
   
 }
 </script>
