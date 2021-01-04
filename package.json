@@ -21,7 +21,7 @@
     "netlify-identity-widget": "^1.9.1",
     "nuxt": "^2.14.6",
     "vue-class-component": "^7.2.6",
-    "xo": "^0.36.1"
+    "xo": "^0.37.1"
   },
   "devDependencies": {
     "@nuxt/types": "^2.14.6",
