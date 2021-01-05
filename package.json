@@ -13,7 +13,7 @@
   },
   "dependencies": {
     "@nuxt/typescript-runtime": "^2.0.0",
-    "@nuxtjs/axios": "^5.12.2",
+    "@nuxtjs/axios": "^5.12.5",
     "core-js": "^3.6.5",
     "graphql": "^15.4.0",
     "graphql-request": "^3.4.0",
