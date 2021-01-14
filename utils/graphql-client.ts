@@ -8,6 +8,7 @@ export class GraphQL {
     if (!authorization)
       throw new Error('Authorization not found! Please log in!');
     return new GraphQLClient(process.env.ENDPOINT_URL ?? '', {
+      mode: "no-cors",
       headers: {authorization}
     });
   }
