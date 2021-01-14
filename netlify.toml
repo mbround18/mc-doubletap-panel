@@ -1,6 +1,6 @@
 [template.environment]
-DOMAIN_NAME = "https://example.com"
-ENDPOINT_URL = "http://mc.example.com/graphql"
-DISCORD_CLIENT_ID = "Discord Client Id"
-DISCORD_CLIENT_SECRET = "Discord Client Secret"
-DISCORD_CODE_VERIFIER = "A secret string of text, can be random"
+DOMAIN_NAME = "The domain name of your site: (EX: https://example.com)"
+ENDPOINT_URL = "The graphql endpoint: (EX: http://mc.example.com/graphql)"
+DISCORD_CLIENT_ID = "Your Discord client ID"
+DISCORD_CLIENT_SECRET = "Your Discord client secret"
+DISCORD_CODE_VERIFIER = "Site Secreit: (A secret string of text, can be random)"
