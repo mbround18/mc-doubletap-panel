@@ -1,3 +1,25 @@
+[build]
+base = "."
+publish = "dist/"
+# Default build command.
+command = "yarn generate"
+
+[build.processing.css]
+bundle = true
+minify = false
+[build.processing.js]
+bundle = true
+minify = false
+[build.processing.html]
+pretty_urls = true
+[build.processing.images]
+compress = true
+
+[[redirects]]
+from = "/*"
+to = "/index.html"
+status = 200
+
 [template.environment]
 DOMAIN_NAME = "The domain name of your site: (EX: https://example.com)"
 ENDPOINT_URL = "The graphql endpoint: (EX: http://mc.example.com/graphql)"
