@@ -1,7 +1,6 @@
-/* eslint-disable camelcase */
-const {merge} = require('lodash')
-require("dotenv").config()
-const {discord} = require('./config/auth/strategies/discord')
+const {merge} = require('lodash');
+require('dotenv').config();
+const {discord} = require('./config/auth/strategies/discord');
 const nuxtConfig = {
   // Target (https://go.nuxtjs.dev/config-target)
   target: 'static',
@@ -47,7 +46,7 @@ const nuxtConfig = {
 
   vuetify: {
     theme: {
-     dark: true
+      dark: true
     }
   },
   // Axios module configuration (https://go.nuxtjs.dev/config-axios)
@@ -65,28 +64,20 @@ const nuxtConfig = {
   },
 
   // Build Configuration (https://go.nuxtjs.dev/config-build)
-  build: {},
-
-  router: {
-    extendedRoutes(routes, resolve) {
-      routes.push({
-        path: '/graphql',
-        beforeEnter(to, from, next) {
-          // Put the full page URL including the protocol http(s) below
-          window.location.replace(process.env.ENDPOINT_URL)
-        }
-      })
-    }
-  }
+  build: {}
 };
-export default merge(nuxtConfig, {
-  auth: {
-    strategies: {
-      discord
+export default merge(
+  nuxtConfig,
+  {
+    auth: {
+      strategies: {
+        discord
+      }
+    }
+  },
+  {
+    env: {
+      ENDPOINT_URL: process.env.ENDPOINT_URL
     }
   }
-}, {
-  env: {
-    ENDPOINT_URL: process.env.ENDPOINT_URL
-  }
-});
+);

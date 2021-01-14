@@ -36,14 +36,12 @@ export const mutations = {
   }
 };
 
-
-
 export const actions = {
   async fetch({commit}: any) {
     try {
       const client = GraphQL.client();
       const data = await client.request(fetchAllowList);
-      console.log(data)
+      console.log(data);
       commit('set', get(data, 'whitelist.players', []));
     } catch (error) {
       Vue.toasted.error(error.message);
@@ -68,7 +66,7 @@ export const actions = {
         } to whitelist!`
       );
     } catch (error: any) {
-      console.error(error.message)
+      console.error(error.message);
       Vue.toasted.error(error.name);
     }
   }
