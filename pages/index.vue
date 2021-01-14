@@ -1,57 +1,20 @@
 <template>
-  <div class="container">
     <div>
-      <div id="netlify-modal"></div>
-      <h1 class="title">
-        Minecraft Graphql Interface
-      </h1>
-      <div class="links">
-        <button v-on:click="getWorld">Get World</button>
-        {{ world.allowAnimals }}
-      </div>
+      <whitelist v-if="loggedIn"></whitelist>
+      <p v-else>You are not logged in! Please log in.</p>
     </div>
-  </div>
 </template>
 
 <script lang="ts">
 import Vue from 'vue'
 import Component from 'vue-class-component'
-import { request, gql } from 'graphql-request'
-import {merge} from 'lodash'
-import * as netlifyIdentity from 'netlify-identity-widget';
+import {Logger} from "~/utils/logger";
 
 @Component
-export default class Counter extends Vue {
-  // Class properties will be component data
-  count = 0
-  world = { };
-
-  // Methods will be component methods
-  getWorld() {
-    const query = gql`
-      {
-        world(name: "world") {
-          name
-          allowAnimals
-        }
-      }
-    `
-    request('http://localhost:8101/graphql', query).then((data) => merge(this.world, data))  
+export default class Index extends Vue {
+  logger = new Logger('pages/index')
+  get loggedIn() {
+    return this.$auth.loggedIn
   }
-
-  mounted() {
-    netlifyIdentity.init({
-      container: '#netlify-modal', 
-      locale: 'en' 
-    });
-    netlifyIdentity.open();
-  }
-  
 }
 </script>
-
-<style lang="scss">
-.container {
-  @apply min-h-screen flex justify-center items-center text-center mx-auto;
-}
-</style>>

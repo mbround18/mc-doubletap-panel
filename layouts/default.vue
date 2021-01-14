@@ -1,7 +1,16 @@
 <template>
-  <div>
-    <Nuxt />
-  </div>
+  <v-app dark class="overflow-hidden">
+    <v-app-bar
+      absolute
+      elevate-on-scroll
+      scroll-target="#scrolling-techniques-7"
+    >
+      <v-toolbar-title>Minecraft GraphQL Interface</v-toolbar-title>
+      <v-spacer></v-spacer>
+      <login></login>
+    </v-app-bar>
+    <Nuxt class="flex flex-column justify-center align-center pt-16" />
+  </v-app>
 </template>
 
 <style>

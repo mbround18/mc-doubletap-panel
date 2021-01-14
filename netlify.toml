@@ -1,0 +1,6 @@
+[template.environment]
+DOMAIN_NAME = "https://example.com"
+ENDPOINT_URL = "http://mc.example.com/graphql"
+DISCORD_CLIENT_ID = "Discord Client Id"
+DISCORD_CLIENT_SECRET = "Discord Client Secret"
+DISCORD_CODE_VERIFIER = "A secret string of text, can be random"
