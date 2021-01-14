@@ -1,5 +1,7 @@
 # mc-graphql-admin
 
+<a href="https://app.netlify.com/start/deploy?repository=https://github.com/mbround18/mc-doubletap-panel"><img  src="https://www.netlify.com/img/deploy/button.svg"/></a>
+
 ## Build Setup
 
 ```bash
