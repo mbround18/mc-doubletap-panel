@@ -1,73 +1,89 @@
-import {get, merge, isEqual, pick, remove as removeItems} from 'lodash';
+import {set, get, merge, pick, without} from 'lodash';
 import {GraphQL} from '~/utils/graphql-client';
-import Vue from 'vue';
 import {
   addToAllowList,
   fetchAllowList,
   removeFromAllowList
 } from '~/graphql/whitelist';
+import {utc} from 'moment/moment';
+import translatedCopy from '~/locale/translated-copy';
+import Vue from 'vue';
 
-export interface Player {
+export interface OfflinePlayer {
   [k: string]: any;
   name: string;
   isWhitelisted: boolean;
+  lastPlayed: any;
 }
-
+const graphQL = new GraphQL('server');
 export interface AllowListState {
-  players: Player[];
+  players: OfflinePlayer[];
 }
 
-export const state = () => ({
+export const state = (): AllowListState => ({
   players: []
 });
 
 export const mutations = {
-  set(state: AllowListState, payload: Player[]) {
+  setPlayers(state: AllowListState, payload: OfflinePlayer[]) {
     state.players = payload;
+    return state;
   },
-  add(state: AllowListState, payload: Player) {
+  addPlayer(state: AllowListState, payload: OfflinePlayer) {
     state.players.push(payload);
+    return state;
   },
-  remove(state: AllowListState, {name: username}: Player) {
-    const players = removeItems(state.players, (player: Player) =>
-      isEqual(player.name.toLowerCase(), username.toLowerCase())
-    );
-    merge(state, {players});
+  removePlayer(state: AllowListState, payload: OfflinePlayer) {
+    const players = without(state.players, payload);
+    set(state, 'players', players);
+    return state;
   }
 };
 
 export const actions = {
   async fetch({commit}: any) {
     try {
-      const client = GraphQL.client();
-      const data = await client.request(fetchAllowList);
-      console.log(data);
-      commit('set', get(data, 'whitelist.players', []));
+      graphQL.subscribe({
+        interval: 30000,
+        query: fetchAllowList,
+        callback: (data) => {
+          const playerList: OfflinePlayer[] = get(
+            data,
+            'whitelist.players',
+            []
+          );
+          const playerListModified = playerList.map((player) => {
+            const lastPlayed = utc(player?.lastPlayed ?? 0).format(
+              'YYYY-MM-DD HH:mm'
+            );
+            return merge(player, {lastPlayed});
+          });
+          commit('setPlayers', playerListModified);
+        }
+      });
     } catch (error) {
       Vue.toasted.error(error.message);
     }
   },
   async update(
     {commit}: any,
-    {action, player}: {action: 'add' | 'remove'; player: Partial<Player>}
+    {action, player}: {action: 'add' | 'remove'; player: Partial<OfflinePlayer>}
   ) {
     const query = action === 'add' ? addToAllowList : removeFromAllowList;
     if (!player) {
-      return Vue.toasted.error('User supplied is undefined!');
+      return Vue.toasted.error(
+        translatedCopy(`whitelist.toast.${action}.failure`)
+      );
     }
 
     try {
-      const client = GraphQL.client();
-      await client.request(query, pick(player, 'name'));
-      commit(action, player);
+      const data = await graphQL.request(query, pick(player, 'name'));
       Vue.toasted.success(
-        `Successfully ${action === 'add' ? 'added' : 'removed'} ${
-          player.name
-        } to whitelist!`
+        translatedCopy(`whitelist.toast.${action}.success`, player)
       );
-    } catch (error: any) {
-      console.error(error.message);
-      Vue.toasted.error(error.name);
+      return commit(`${action}Player`, player);
+    } catch (error) {
+      Vue.toasted.error(error.message);
     }
   }
 };

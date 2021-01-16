@@ -9,7 +9,7 @@ const nuxtConfig = {
 
   // Global page headers (https://go.nuxtjs.dev/config-head)
   head: {
-    title: 'mc-graphql-admin',
+    title: 'Minecraft GraphQL Panel',
     meta: [
       {charset: 'utf-8'},
       {name: 'viewport', content: 'width=device-width, initial-scale=1'},
@@ -64,7 +64,17 @@ const nuxtConfig = {
   },
 
   // Build Configuration (https://go.nuxtjs.dev/config-build)
-  build: {}
+  build: {},
+
+  router: {
+    extendRoutes(routes, resolve) {
+      routes.push({
+        name: 'custom',
+        path: '*',
+        component: resolve(__dirname, 'pages/404.vue')
+      });
+    }
+  }
 };
 export default merge(
   nuxtConfig,

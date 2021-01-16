@@ -3,15 +3,47 @@
     <v-app-bar
       absolute
       elevate-on-scroll
-      scroll-target="#scrolling-techniques-7"
     >
-      <v-toolbar-title>Minecraft GraphQL Interface</v-toolbar-title>
+      <v-toolbar-title>
+        <div class="flex flex-column">
+          <h1 class="purple--text">{{name}}</h1>
+          <small class="sm:visible">{{motd}}</small>
+        </div>
+      </v-toolbar-title>
       <v-spacer></v-spacer>
       <login></login>
     </v-app-bar>
-    <Nuxt class="flex flex-column justify-center align-center pt-16" />
+    <Nuxt v-if="$auth.loggedIn" class="flex flex-wrap justify-center align-center pt-16 space-x-4 space-y-4" />
+    <p v-else>You are not logged in! Please log in.</p>
   </v-app>
 </template>
+
+<script lang="ts">
+import Vue from "vue";
+import Component from "vue-class-component";
+import Login from "~/components/login.vue"
+
+@Component({
+  components: {
+    Login
+  }
+})
+export default class DefaultLayout extends Vue {
+  get name() {
+    return this.$store.state.server.name
+  }
+  get motd() {
+    return this.$store.state.server.motd
+  }
+
+  mounted() {
+    if (this.$auth.loggedIn) {
+      this.$store.dispatch('server/fetchHeaderInfo')
+    }
+  }
+
+}
+</script>
 
 <style>
 html {

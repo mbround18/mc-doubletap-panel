@@ -5,6 +5,7 @@ export const fetchAllowList = gql`
     whitelist {
       players {
         name
+        lastPlayed
       }
     }
   }

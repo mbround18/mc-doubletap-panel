@@ -1,0 +1,17 @@
+{
+  "server.component.title": "Server Info",
+  "server.component.maxPlayers": "Max Players: ${maxPlayers}",
+  "server.component.onlinePlayers.name": "Name",
+  "server.component.onlinePlayers.address": "Address",
+  "server.component.onlinePlayers.playTime": "Play Time",
+  "server.component.onlinePlayers.isBanned": "Is Banned?",
+  "server.component.onlinePlayers.foodLevel": "Food Level",
+  "server.component.onlinePlayers.exhaustion": "Exhaustion",
+  "server.component.onlinePlayers.healthInfo": "Health",
+
+  "whitelist.component.title": "Whitelist",
+  "whitelist.toast.add.success": "You have successfully added ${name} to the whitelist!",
+  "whitelist.toast.add.failure": "Failed to add ${name} to the whitelist!",
+  "whitelist.toast.remove.success": "You have successfully removed ${name} from the whitelist!",
+  "whitelist.toast.remove.failure": "Failed to remove ${name} to the whitelist!"
+}
