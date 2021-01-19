@@ -1,6 +1,6 @@
 {
 	"name": "Minecraft Doubletap",
-	"description": "This is the frontend for mc-doubletap plugin that you can deploy!",
+	"description": "This is the frontend for mc-doubletap plugin that you can deploy!\nPlease make sure you are running the plugin on your server: https://github.com/mbround18/mc-doubletap",
 	"keywords": [
 		"gaming",
 		"HTML5",
@@ -11,19 +11,17 @@
 	"env": {
 		"DOMAIN_NAME": {
 			"description": "The domain in which you intend to run this app from.",
-			"default": "https://example.com"
+			"value": "https://example.com"
 		},
 		"ENDPOINT_URL": {
 			"description": "The host of your minecraft server, something like https://mc.boop.ninja",
-			"default": "https://endpoint.example.com"
+			"value": "https://endpoint.example.com"
 		},
 		"DISCORD_CLIENT_ID": {
 			"description": "Client ID of your discord app for authorization. Check out: https://discord.com/developers/applications",
-			"default": "secret"
 		},
 		"DISCORD_CLIENT_SECRET": {
 			"description": "Client Secret of your discord app for authorization. Check out: https://discord.com/developers/applications",
-			"default": "secret"
 		},
 		"DISCORD_CODE_VERIFIER": {
 			"description": "Random string that is a secret in which your app and discord share.",
