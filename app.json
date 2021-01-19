@@ -18,10 +18,10 @@
 			"value": "https://endpoint.example.com"
 		},
 		"DISCORD_CLIENT_ID": {
-			"description": "Client ID of your discord app for authorization. Check out: https://discord.com/developers/applications",
+			"description": "Client ID of your discord app for authorization. Check out: https://discord.com/developers/applications"
 		},
 		"DISCORD_CLIENT_SECRET": {
-			"description": "Client Secret of your discord app for authorization. Check out: https://discord.com/developers/applications",
+			"description": "Client Secret of your discord app for authorization. Check out: https://discord.com/developers/applications"
 		},
 		"DISCORD_CODE_VERIFIER": {
 			"description": "Random string that is a secret in which your app and discord share.",
