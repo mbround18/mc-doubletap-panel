@@ -1,5 +1,20 @@
 # mc-graphql-admin
 
+> Before deploying this web interface, make sure you have a release version or the latest snapshot!
+
+## Plugin Download
+
+### Setup
+
+[mbround18/mc-doubletap](https://github.com/mbround18/mc-doubletap)
+
+### Snapshot
+
+> Download snapshot button still under development
+
+1. ![[Download Snapshot](https://github.com/mbround18/mc-doubletap/releases/tag/latest-snapshot)](https://github.com/mbround18/mc-doubletap/blob/main/docs/assets/download-snapshot.png?raw=true)
+2. [Follow install instructions](https://github.com/mbround18/mc-doubletap/blob/main/README.md)
+
 ## Deployment Options
 
 ### Heroku
