@@ -1,0 +1,40 @@
+{
+  "name": "Minecraft Doubletap",
+  "description": "This is the frontend for mc-doubletap plugin that you can deploy!",
+  "keywords": [
+    "gaming",
+    "HTML5",
+    "minecraft"
+  ],
+  "repository": "https://github.com/mbround18/mc-doubletap-panel",
+  "success_url": "/",
+  "env": {
+    "DOMAIN_NAME": {
+      "description": "The domain in which you intend to run this app from.",
+      "generator": "secret"
+    },
+    "ENDPOINT_URL": {
+      "description": "The host of your minecraft server, something like https://mc.boop.ninja",
+      "generator": "secret"
+    },
+    "DISCORD_CLIENT_ID": {
+      "description": "Client ID of your discord app for authorization. Check out: https://discord.com/developers/applications",
+      "generator": "secret"
+    },
+    "DISCORD_CLIENT_SECRET": {
+      "description": "Client Secret of your discord app for authorization. Check out: https://discord.com/developers/applications",
+      "generator": "secret"
+    },
+    "DISCORD_CODE_VERIFIER": {
+      "description": "Random string thats up to you! This is a secret in which your app and discord share. Make it unique!",
+      "generator": "secret"
+    },
+  },
+  "formation": {
+    "web": {
+      "quantity": 1,
+      "size": "standard-1x"
+    }
+  },
+  "image": "heroku/node"
+}
