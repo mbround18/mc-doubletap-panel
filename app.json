@@ -33,8 +33,8 @@
   "formation": {
     "web": {
       "quantity": 1,
-      "size": "standard-1x"
+      "size": "free"
     }
   },
-  "image": "heroku/node"
+  "image": "heroku/nodejs"
 }
