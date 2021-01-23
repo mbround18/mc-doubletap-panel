@@ -15,10 +15,7 @@ export const fetchServerInfo = gql`
       ip
       port
       version
-      maxPlayers
-      worlds {
-        name
-      }
+      hasWhitelist
     }
   }
 `;
@@ -26,15 +23,18 @@ export const fetchServerInfo = gql`
 export const fetchOnlinePlayers = gql`
   query OnlinePlayers {
     server {
+      maxPlayers
       onlinePlayers {
         name
         address
         playTime
-        isBanned
         foodLevel
         exhaustion
         health
         maxHealth
+        gamemode
+        isBanned
+        isWhitelisted
       }
     }
   }

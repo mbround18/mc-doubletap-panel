@@ -1,4 +1,4 @@
-export interface OnlinePlayer {
+export interface IOnlinePlayer {
   name: string;
   address: string;
   playTime: number;
@@ -6,7 +6,9 @@ export interface OnlinePlayer {
   foodLevel: number;
   exhaustion: number;
 
+  level: number;
   health: number;
   maxHealth: number;
   healthScale: number;
+  gamemode: string;
 }

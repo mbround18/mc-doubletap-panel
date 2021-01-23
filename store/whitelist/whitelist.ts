@@ -1,5 +1,15 @@
 import {gql} from 'graphql-request';
 
+export const setAllowListStatus = gql`
+  mutation SetAllowListStatus($status: Boolean!) {
+    whitelist {
+      status(status: $status) {
+        hasWhitelist
+      }
+    }
+  }
+`;
+
 export const fetchAllowList = gql`
   query FetchAllowList {
     whitelist {
@@ -16,7 +26,6 @@ export const addToAllowList = gql`
     whitelist {
       add(name: $name) {
         name
-        isWhitelisted
         lastPlayed
       }
     }
@@ -28,7 +37,6 @@ export const removeFromAllowList = gql`
     whitelist {
       remove(name: $name) {
         name
-        isWhitelisted
         lastPlayed
       }
     }

@@ -4,45 +4,29 @@
       absolute
       elevate-on-scroll
     >
-      <v-toolbar-title>
-        <div class="flex flex-column">
-          <h1 class="purple--text">{{name}}</h1>
-          <small class="sm:visible">{{motd}}</small>
-        </div>
-      </v-toolbar-title>
-      <v-spacer></v-spacer>
-      <login></login>
+      <server-title />
+      <v-spacer />
+      <login />
     </v-app-bar>
-    <Nuxt v-if="$auth.loggedIn" class="flex flex-wrap justify-center align-center pt-16 space-x-4 space-y-4" />
-    <p v-else>You are not logged in! Please log in.</p>
+    <Nuxt class="justify-center align-center pt-16" />
   </v-app>
 </template>
 
 <script lang="ts">
 import Vue from "vue";
 import Component from "vue-class-component";
-import Login from "~/components/login.vue"
+import Login from "../components/login.vue";
+import ServerTitle from "../components/server/server-title.vue";
 
 @Component({
-  components: {
-    Login
-  }
+  components: {ServerTitle, Login}
 })
-export default class DefaultLayout extends Vue {
-  get name() {
-    return this.$store.state.server.name
+export default class DefaultLayout extends Vue{
+  get authenticated() {
+    return this.$auth.loggedIn
   }
-  get motd() {
-    return this.$store.state.server.motd
-  }
-
-  mounted() {
-    if (this.$auth.loggedIn) {
-      this.$store.dispatch('server/fetchHeaderInfo')
-    }
-  }
-
 }
+
 </script>
 
 <style>

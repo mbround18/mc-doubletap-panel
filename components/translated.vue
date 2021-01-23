@@ -1,7 +1,5 @@
 <template>
-  <div>
-    {{translation}}
-  </div>
+  <div v-html="translation" />
 </template>
 
 <script lang="ts">

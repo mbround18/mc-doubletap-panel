@@ -1,7 +1,7 @@
-import {World} from '~/store/server/interfaces/world.interface';
-import {OnlinePlayer} from '~/store/server/interfaces/online-player.interface';
+import {IWorld} from '~/store/server/interfaces/world.interface';
+import {IOnlinePlayer} from '~/store/server/interfaces/online-player.interface';
 
-export interface Server {
+export interface IServer {
   name: string;
   motd: string;
 
@@ -9,7 +9,8 @@ export interface Server {
   port: number;
   version: number;
   maxPlayers: number;
-  onlinePlayers: OnlinePlayer[];
+  onlinePlayers: IOnlinePlayer[];
+  hasWhitelist: boolean;
 
-  worlds: World[];
+  worlds: IWorld[];
 }

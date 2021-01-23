@@ -5,11 +5,14 @@ const locales = {
 };
 
 function translatedCopy(key: string, values?: any) {
-  const locale = localStorage.getItem('locale') ?? 'en_us';
-  const selectedLocal = get(locales, locale);
-  const translation = get(selectedLocal, key, 'no translation found');
+  const defaultLocale = 'en_us';
+  const locale = process.browser
+    ? localStorage.getItem('locale')
+    : defaultLocale;
+  const selectedLocal = get(locales, locale ?? defaultLocale);
+  const translation = get(selectedLocal, key, `no translation found: ${key}`);
   const compile = template(translation);
-  return compile(values);
+  return compile(values ?? {});
 }
 
 export default translatedCopy;

@@ -1,3 +1,3 @@
-export interface World {
+export interface IWorld {
   name: string;
 }

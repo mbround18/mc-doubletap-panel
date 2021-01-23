@@ -1,89 +1,72 @@
-import {set, get, merge, pick, without} from 'lodash';
+import {
+  Action,
+  Module,
+  Mutation,
+  VuexModule,
+  MutationAction
+} from 'vuex-module-decorators';
 import {GraphQL} from '~/utils/graphql-client';
+import {subscriptionAction} from '~/utils/subscription-action';
+import {get, pick, without} from 'lodash';
 import {
   addToAllowList,
   fetchAllowList,
   removeFromAllowList
-} from '~/graphql/whitelist';
-import {utc} from 'moment/moment';
-import translatedCopy from '~/locale/translated-copy';
+} from '~/store/whitelist/whitelist';
+import {IOfflinePlayer} from '~/store/player/interfaces/offline-player.interface';
 import Vue from 'vue';
+import {utc} from 'moment/moment';
 
-export interface OfflinePlayer {
-  [k: string]: any;
-  name: string;
-  isWhitelisted: boolean;
-  lastPlayed: any;
-}
-const graphQL = new GraphQL('server');
-export interface AllowListState {
-  players: OfflinePlayer[];
-}
+const gqlClient = new GraphQL('server');
+@Module({stateFactory: true})
+export default class AllowListStore extends VuexModule {
+  players: IOfflinePlayer[] = [];
 
-export const state = (): AllowListState => ({
-  players: []
-});
-
-export const mutations = {
-  setPlayers(state: AllowListState, payload: OfflinePlayer[]) {
-    state.players = payload;
-    return state;
-  },
-  addPlayer(state: AllowListState, payload: OfflinePlayer) {
-    state.players.push(payload);
-    return state;
-  },
-  removePlayer(state: AllowListState, payload: OfflinePlayer) {
-    const players = without(state.players, payload);
-    set(state, 'players', players);
-    return state;
-  }
-};
-
-export const actions = {
-  async fetch({commit}: any) {
-    try {
-      graphQL.subscribe({
-        interval: 30000,
-        query: fetchAllowList,
-        callback: (data) => {
-          const playerList: OfflinePlayer[] = get(
-            data,
-            'whitelist.players',
-            []
-          );
-          const playerListModified = playerList.map((player) => {
-            const lastPlayed = utc(player?.lastPlayed ?? 0).format(
-              'YYYY-MM-DD HH:mm'
-            );
-            return merge(player, {lastPlayed});
-          });
-          commit('setPlayers', playerListModified);
-        }
-      });
-    } catch (error) {
-      Vue.toasted.error(error.message);
-    }
-  },
-  async update(
-    {commit}: any,
-    {action, player}: {action: 'add' | 'remove'; player: Partial<OfflinePlayer>}
-  ) {
-    const query = action === 'add' ? addToAllowList : removeFromAllowList;
-    if (!player) {
-      return Vue.toasted.error(
-        translatedCopy(`whitelist.toast.${action}.failure`)
+  @MutationAction
+  async fetchPlayers() {
+    const data = await gqlClient.request(fetchAllowList);
+    let players: IOfflinePlayer[] = get(
+      data,
+      'whitelist.players',
+      this.players
+    );
+    players = players.map((player: IOfflinePlayer) => {
+      const lastPlayed = utc(player?.lastPlayed ?? 0).format(
+        'YYYY-MM-DD HH:mm'
       );
+      return {...player, ...{lastPlayed}};
+    });
+    return {players};
+  }
+
+  @MutationAction
+  async addPlayer(player: Partial<IOfflinePlayer>) {
+    const data = await gqlClient.request(addToAllowList, pick(player, 'name'));
+    if (data) {
+      Vue.toasted.global.allowListAddPlayerSuccess(player);
+      return {players: [player]};
     }
 
-    try {
-      const data = await graphQL.request(query, pick(player, 'name'));
-      Vue.toasted.success(
-        translatedCopy(`whitelist.toast.${action}.success`, player)
-      );
-      return commit(`${action}Player`, player);
-    } catch (error) {
-      Vue.toasted.error(error.message);
-    }
+    return {};
   }
-};
+
+  @MutationAction
+  async removePlayer(player: Partial<IOfflinePlayer>) {
+    const data = await gqlClient.request(
+      removeFromAllowList,
+      pick(player, 'name')
+    );
+    if (data) {
+      Vue.toasted.global.allowListAddPlayerSuccess(player);
+      const players = without(this.players, player);
+      return {players};
+    }
+
+    return {};
+  }
+
+  @Action
+  async subscribeFetchPlayers() {
+    return subscriptionAction(this.context, 'whitelist/fetchPlayers');
+  }
+}
