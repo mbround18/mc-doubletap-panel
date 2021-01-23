@@ -34,7 +34,6 @@
 			"size": "free"
 		}
 	},
-
   "buildpacks": [
     {
       "url": "heroku/nodejs"
@@ -44,4 +43,3 @@
     }
   ]
 }
-

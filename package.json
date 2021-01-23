@@ -8,11 +8,12 @@
     "start": "nuxt-ts start",
     "generate": "nuxt-ts generate",
     "lint": "xo --fix",
-    "test": "jest"
+    "test": "jest --passWithNoTests"
   },
   "husky": {
     "hooks": {
-      "pre-commit": "yarn lint && yarn build"
+      "pre-commit": "yarn lint",
+      "pre-push": "yarn build"
     }
   },
   "xo": {
