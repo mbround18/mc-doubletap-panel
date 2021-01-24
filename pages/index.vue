@@ -1,8 +1,11 @@
 <template>
-  <div class="flex flex-wrap space-x-3 space-y-3" id="index-page">
+  <div class="flex flex-wrap space-x-3 space-y-3" id="index-page" v-if="$auth.loggedIn">
     <server-settings class="lg:w-1/3"/>
     <player-list  />
     <whitelist  v-if="hasWhitelist" />
+  </div>
+  <div v-else>
+    <h1>Please Log in</h1>
   </div>
 </template>
 <script lang="ts">
@@ -18,11 +21,7 @@ export default class Index extends Vue {
   drawer = true;
 
   get hasWhitelist() {
-    return this.$store.state.server.hasWhitelist;
-  }
-
-  mounted() {
-    this.$store.dispatch('server/fetchServerInfo')
+    return this.$store.state?.server?.hasWhitelist;
   }
 }
 </script>

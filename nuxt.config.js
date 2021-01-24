@@ -58,6 +58,8 @@ const nuxtConfig = {
       namespace: 'auth'
     },
     redirect: {
+      login: '/',
+      logout: '/',
       callback: '/auth/invoke'
     },
     strategies: {

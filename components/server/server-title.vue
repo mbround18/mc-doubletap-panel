@@ -19,7 +19,9 @@ export default class ServerTitle extends Vue {
   }
 
   mounted() {
-    this.$store.dispatch('server/fetchHeaderInfo')
+    if (this.$auth.loggedIn) {
+      this.$store.dispatch('server/fetchHeaderInfo')
+    }
   }
 }
 </script>
