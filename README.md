@@ -15,7 +15,8 @@
 ### Snapshot
 
 > Download snapshot button still under development
-1. ![[Download Snapshot](https://github.com/mbround18/mc-doubletap/releases/tag/latest-snapshot)](https://github.com/mbround18/mc-doubletap/blob/main/docs/assets/download-snapshot.png?raw=true)
+1.  [![Download Snapshot](https://github.com/mbround18/mc-doubletap/blob/main/docs/assets/download-snapshot.png?raw=true) ](https://github.com/mbround18/mc-doubletap/releases/tag/latest-snapshot)
+
 2. [Follow install instructions](https://github.com/mbround18/mc-doubletap/blob/main/README.md)
 
 ## Deployment Options
