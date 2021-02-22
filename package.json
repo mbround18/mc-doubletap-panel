@@ -70,7 +70,7 @@
     "babel-jest": "^26.5.0",
     "eslint": "^7.20.0",
     "eslint-config-xo": "^0.34.0",
-    "eslint-config-xo-typescript": "^0.37.0",
+    "eslint-config-xo-typescript": "^0.38.0",
     "eslint-plugin-nuxt": "^2.0.0",
     "eslint-plugin-vue": "^7.6.0",
     "husky": "^5.0.9",
