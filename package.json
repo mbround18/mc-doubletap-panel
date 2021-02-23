@@ -51,7 +51,7 @@
     "vue-toasted": "^1.1.28",
     "vuex-module-decorators": "^1.0.1",
     "vuex-persistedstate": "^4.0.0-beta.3",
-    "xo": "^0.37.1"
+    "xo": "^0.38.1"
   },
   "devDependencies": {
     "@nuxt/types": "^2.15.1",
