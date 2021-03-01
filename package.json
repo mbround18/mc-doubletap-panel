@@ -54,7 +54,7 @@
     "xo": "^0.38.2"
   },
   "devDependencies": {
-    "@nuxt/types": "^2.15.1",
+    "@nuxt/types": "^2.15.2",
     "@nuxt/typescript-build": "^2.0.5",
     "@nuxtjs/eslint-config": "^5.0.0",
     "@nuxtjs/eslint-config-typescript": "^5.0.0",
