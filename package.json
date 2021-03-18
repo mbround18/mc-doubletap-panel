@@ -79,6 +79,6 @@
     "sass-loader": "^11.0.1",
     "ts-jest": "^26.5.3",
     "vue-jest": "^3.0.4",
-    "vuetify": "^2.4.6"
+    "vuetify": "^2.4.7"
   }
 }
