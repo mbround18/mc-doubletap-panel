@@ -43,7 +43,7 @@
     "lodash": "^4.17.21",
     "moment": "^2.29.1",
     "netlify-identity-widget": "^1.9.1",
-    "nuxt": "^2.15.3",
+    "nuxt": "^2.15.4",
     "postcss-nested": "^5.0.5",
     "rxjs": "^6.6.6",
     "vue": "^2.6.12",
