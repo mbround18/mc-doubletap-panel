@@ -1,5 +1,4 @@
 import Vue from 'vue';
-import {pick} from 'lodash';
 import {GraphQL} from '~/utils/graphql-client';
 import {Action, Module, VuexModule} from 'vuex-module-decorators';
 import {
