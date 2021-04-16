@@ -14,10 +14,11 @@ jobs:
     name: Lint Code Base
     runs-on: ubuntu-latest
     steps:
-      - name: actions/checkout@v2
+      - uses: actions/checkout@v2
         with:
           fetch-depth: 0
-      - name: Linting process
+
+      - name: Linting
         uses: github/super-linter@v3
         env:
           IGNORE_GITIGNORE_FILES: true
