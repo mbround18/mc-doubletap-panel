@@ -1,13 +1,13 @@
 /* eslint-disable camelcase */
-const {merge} = require('lodash');
-const keycloakBaseUrl = `${process.env.KEYCLOAK_HOST}/auth/realms/${process.env.KEYCLOAK_REALM}/protocol/openid-connect`;
+const { merge } = require('lodash')
+const keycloakBaseUrl = `${process.env.KEYCLOAK_HOST}/auth/realms/${process.env.KEYCLOAK_REALM}/protocol/openid-connect`
 const keycloakConfig = {
   client_id: process.env.KEYCLOAK_CLIENT_ID,
   userinfo_endpoint: `${keycloakBaseUrl}/userinfo`,
   authorization_endpoint: `${keycloakBaseUrl}/auth`,
   access_token_endpoint: `${keycloakBaseUrl}/token`,
   redirect_uri: process.env.KEYCLOAK_REDIRECT
-};
+}
 
 export const keycloak = merge(
   {
@@ -24,4 +24,4 @@ export const keycloak = merge(
     scope: ['openid', 'profile', 'email']
   },
   keycloakConfig
-);
+)
