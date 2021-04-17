@@ -40,12 +40,12 @@
 </template>
 
 <script lang="ts">
-import Vue from "vue";
-import Component from "vue-class-component";
-import Translated from "~/components/translated.vue";
-import {Prop, PropSync} from "vue-property-decorator";
-import {merge, set, get} from 'lodash'
-import translatedCopy from "~/locale/translated-copy";
+import Vue from "vue"
+import Component from "vue-class-component"
+import Translated from "~/components/translated.vue"
+import { Prop } from "vue-property-decorator"
+import { merge, set, get } from "lodash"
+import translatedCopy from "~/locale/translated-copy"
 
 export interface IOpenOptions {
   width: number
@@ -53,17 +53,16 @@ export interface IOpenOptions {
 }
 
 @Component({
-  components: {Translated}
+  components: { Translated }
 })
 export default class ConfirmDialog extends Vue {
   @Prop(String) title!: string;
   @Prop(String) message!: string;
-  @Prop({type: String, default: 'accept'}) type!: string
-  @Prop(Object)  variables!: object;
+  @Prop({ type: String, default: "accept" }) type!: string
+  @Prop(Object) variables!: object;
   @Prop(Boolean) cancelable!: boolean;
   @Prop(String) inputLabel!: string;
   @Prop(String) inputValue!: string;
-
 
   localVariables = {}
 
@@ -76,49 +75,45 @@ export default class ConfirmDialog extends Vue {
     zIndex: 200
   };
 
-  get translatedInputLabel() {
+  get translatedInputLabel () {
     return translatedCopy(this.inputLabel, this.variables)
   }
 
-
-  get yOption() {
-    return `confirmation-dialogue.action.${this.type}`;
+  get yOption () {
+    return `confirmation-dialogue.action.${this.type}`
   }
-  get nOption() {
+
+  get nOption () {
     const noTypes = {
-      'accept' : "confirmation-dialogue.action.cancel",
-      'agree': "confirmation-dialogue.action.disagree",
-      'yes':"confirmation-dialogue.action.no"
+      accept: "confirmation-dialogue.action.cancel",
+      agree: "confirmation-dialogue.action.disagree",
+      yes: "confirmation-dialogue.action.no"
     }
     return get(noTypes, this.type)
   }
 
-  open(variables?: object, options?: IOpenOptions) {
-    this.dialog = true;
-    if(options) {
-      set(this, 'options', merge(this.options, options))
+  open (variables?: object, options?: IOpenOptions) {
+    this.dialog = true
+    if (options) {
+      set(this, "options", merge(this.options, options))
     }
     if (variables) {
-      set(this, 'localVariables', merge(this.variables, this.localVariables, variables))
+      set(this, "localVariables", merge(this.variables, this.localVariables, variables))
     }
     return new Promise((resolve, reject) => {
-      this.resolve = resolve;
-      this.reject = reject;
-    });
+      this.resolve = resolve
+      this.reject = reject
+    })
   }
 
-  agree() {
-    this.resolve(true);
-    this.dialog = false;
+  agree () {
+    this.resolve(true)
+    this.dialog = false
   }
 
-  cancel() {
-    this.resolve(false);
-    this.dialog = false;
+  cancel () {
+    this.resolve(false)
+    this.dialog = false
   }
-
-
 }
 </script>
-
-

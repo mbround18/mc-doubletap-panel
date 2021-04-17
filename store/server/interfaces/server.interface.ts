@@ -1,5 +1,5 @@
-import {IWorld} from '~/store/server/interfaces/world.interface';
-import {IOnlinePlayer} from '~/store/server/interfaces/online-player.interface';
+import { IWorld } from "~/store/server/interfaces/world.interface"
+import { IOnlinePlayer } from "~/store/server/interfaces/online-player.interface"
 
 export interface IServer {
   name: string;

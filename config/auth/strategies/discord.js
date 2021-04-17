@@ -1,6 +1,6 @@
 /* eslint-disable camelcase */
-const { merge } = require('lodash')
-const baseUrl = 'https://discord.com/api/oauth2'
+const { merge } = require("lodash")
+const baseUrl = "https://discord.com/api/oauth2"
 
 const credentials = {
   client_id: process.env.DISCORD_CLIENT_ID,
@@ -17,9 +17,9 @@ const config = {
 
 export const discord = merge(
   {
-    _scheme: 'oauth2',
-    grant_type: 'authorization_code',
-    scope: ['identify', 'email', 'guilds']
+    _scheme: "oauth2",
+    grant_type: "authorization_code",
+    scope: ["identify", "email", "guilds"]
   },
   config,
   credentials

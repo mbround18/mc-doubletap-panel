@@ -11,7 +11,7 @@
        :headers="headers"
        :loading="isLoading"
      >
-       <template v-slot:item.actions="{ item }">
+       <template v-slot:[`item.actions`]="{ item }">
          <v-icon
            small
            @click="removeFromWhitelist(item)"
@@ -77,67 +77,68 @@
 </template>
 
 <script lang="ts">
-import Vue from "vue";
-import Component from "vue-class-component";
-import {DataTableHeader} from "vuetify";
-import {get, cloneDeep} from 'lodash'
-import {Logger} from "~/utils/logger";
-import {IOnlinePlayer} from "~/store/server/interfaces/online-player.interface";
-import Translated from "~/components/translated.vue";
+import Vue from "vue"
+import Component from "vue-class-component"
+import { DataTableHeader } from "vuetify"
+import { get, cloneDeep } from "lodash"
+import { Logger } from "~/utils/logger"
+import { IOnlinePlayer } from "~/store/server/interfaces/online-player.interface"
+import Translated from "~/components/translated.vue"
 @Component({
-  components: {Translated}
+  components: { Translated }
 })
-export default class Whitelist  extends Vue {
-  logger = new Logger('components/whitelist')
+export default class Whitelist extends Vue {
+  logger = new Logger("components/whitelist")
   isLoading = true;
 
   dialog = false;
-  userToAdd: string = '';
+  userToAdd: string = "";
   headers: DataTableHeader[] = [
     {
-      text: 'name',
-      value: 'name',
+      text: "name",
+      value: "name"
     },
     {
-      text: 'Last Online',
-      value: 'lastPlayed'
+      text: "Last Online",
+      value: "lastPlayed"
     },
-    { text: 'Actions', value: 'actions', sortable: false },
+    { text: "Actions", value: "actions", sortable: false }
   ];
 
-  mounted() {
+  mounted () {
     this.getWhitelist()
   }
 
-  get loggedIn() {
+  get loggedIn () {
     return this.$auth.loggedIn
   }
 
-  get players() {
-    return cloneDeep(get(this.$store.state, 'whitelist.players', []))
-  }
-  // Methods will be component methods
-  async getWhitelist() {
-    await this.$store.dispatch('whitelist/fetchPlayers')
-    this.isLoading = false;
+  get players () {
+    return cloneDeep(get(this.$store.state, "whitelist.players", []))
   }
 
-  async addToWhitelist() {
-    this.isLoading = true;
+  // Methods will be component methods
+  async getWhitelist () {
+    await this.$store.dispatch("whitelist/fetchPlayers")
+    this.isLoading = false
+  }
+
+  async addToWhitelist () {
+    this.isLoading = true
     const player: Partial<IOnlinePlayer> = {
       name: this.userToAdd
     }
-    await this.$store.dispatch('whitelist/addPlayer', player)
+    await this.$store.dispatch("whitelist/addPlayer", player)
     await this.getWhitelist()
-    this.dialog = false;
-    this.isLoading = false;
+    this.dialog = false
+    this.isLoading = false
   }
 
-  async removeFromWhitelist(player: Partial<IOnlinePlayer>) {
-    this.isLoading = true;
-    await this.$store.dispatch('whitelist/removePlayer', player)
+  async removeFromWhitelist (player: Partial<IOnlinePlayer>) {
+    this.isLoading = true
+    await this.$store.dispatch("whitelist/removePlayer", player)
     await this.getWhitelist()
-    this.isLoading = false;
+    this.isLoading = false
   }
 }
 </script>

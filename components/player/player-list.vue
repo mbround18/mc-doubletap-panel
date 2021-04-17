@@ -18,7 +18,7 @@
           @click:row="(item, slot) => slot.expand(!slot.isExpanded)"
           dense
         >
-          <template v-slot:item.healthInfo="{ item }">
+          <template v-slot:[`item.healthInfo`]="{ item }">
             <td>{{item.health}}/{{item.maxHealth}}</td>
           </template>
           <template v-slot:expanded-item="{ headers, item }">
@@ -33,67 +33,65 @@
 </template>
 
 <script lang="ts">
-import Vue from "vue";
-import Component from "vue-class-component";
-import {Logger} from "~/utils/logger";
-import translatedCopy from "~/locale/translated-copy";
-import Translated from '~/components/translated.vue'
-import {DataTableHeader} from "vuetify";
-import Player from "~/components/player/player.vue";
-import {merge} from 'lodash'
+import Vue from "vue"
+import Component from "vue-class-component"
+import { Logger } from "~/utils/logger"
+import translatedCopy from "~/locale/translated-copy"
+import Translated from "~/components/translated.vue"
+import { DataTableHeader } from "vuetify"
+import Player from "~/components/player/player.vue"
 
 @Component({
-  components: {Player, Translated}
+  components: { Player, Translated }
 })
 export default class PlayerList extends Vue {
-  search = '';
+  search = "";
   isLoading = true;
-  logger = new Logger('components/player-list')
+  logger = new Logger("components/player-list")
 
-  get cardTitle() {
-    return translatedCopy('player-list.component.title')
+  get cardTitle () {
+    return translatedCopy("player-list.component.title")
   }
 
-  get headers(): DataTableHeader[] {
+  get headers (): DataTableHeader[] {
     const playerValues = [
-      { value: 'name' },
-      { value: 'address' },
+      { value: "name" },
+      { value: "address" },
       // { value: 'playTime'},
       // { value: 'isBanned' },
-      { value: 'foodLevel' },
-      { value: 'exhaustion' },
-      { value: 'healthInfo' },
-      { text: '', value: 'expanded-item' }
+      { value: "foodLevel" },
+      { value: "exhaustion" },
+      { value: "healthInfo" },
+      { text: "", value: "expanded-item" }
     ]
     return playerValues.map(
-      ({text, value}: any) => ({
+      ({ text, value }: any) => ({
         text: text ?? translatedCopy(`player-list.component.onlinePlayers.${value}`),
         value
       })
     )
   }
 
-  get server() {
-    return this.$store.state.server;
+  get server () {
+    return this.$store.state.server
   }
 
-  get players() {
-    return this.$store.state.server.onlinePlayers;
+  get players () {
+    return this.$store.state.server.onlinePlayers
   }
 
-  get count() {
-    const {maxPlayers} = this.server
+  get count () {
+    const { maxPlayers } = this.server
     return {
       maxPlayers,
       count: this.players.length
     }
   }
 
-  mounted() {
-    this.$store.dispatch('server/fetchServerInfo')
-    this.$store.dispatch('server/subscribeFetchOnlinePlayers').then(()=> (this.isLoading = false));
+  mounted () {
+    this.$store.dispatch("server/fetchServerInfo")
+    this.$store.dispatch("server/subscribeFetchOnlinePlayers").then(() => (this.isLoading = false))
   }
-
 }
 </script>
 

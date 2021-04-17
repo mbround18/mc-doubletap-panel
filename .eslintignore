@@ -1,0 +1,8 @@
+node_modules
+tmp
+dist
+build
+.nuxt
+.idea
+assets
+static/sw.js

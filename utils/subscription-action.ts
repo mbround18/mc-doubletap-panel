@@ -1,12 +1,12 @@
-import {interval as rxjsInterval} from 'rxjs';
+import { interval as rxjsInterval } from "rxjs"
 
-export async function subscriptionAction(
-  {dispatch}: any,
+export async function subscriptionAction (
+  { dispatch }: any,
   type: string,
   payload?: any
 ) {
-  await dispatch(type, payload, {root: true});
+  await dispatch(type, payload, { root: true })
   return rxjsInterval(5000).subscribe(() =>
-    dispatch(type, payload, {root: true})
-  );
+    dispatch(type, payload, { root: true })
+  )
 }

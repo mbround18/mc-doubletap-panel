@@ -1,4 +1,4 @@
-import {gql} from 'graphql-request';
+import { gql } from "graphql-request"
 
 export const fetchWorlds = gql`
   query FetchWorlds {
@@ -8,4 +8,4 @@ export const fetchWorlds = gql`
       }
     }
   }
-`;
+`

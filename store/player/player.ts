@@ -1,4 +1,4 @@
-import {gql} from 'graphql-request';
+import { gql } from "graphql-request"
 
 export const banPlayer = gql`
   mutation BanPlayer($name: String!, $reason: String!) {
@@ -8,7 +8,7 @@ export const banPlayer = gql`
       }
     }
   }
-`;
+`
 export const kickPlayer = gql`
   mutation KickPlayer($name: String!, $reason: String!) {
     player {
@@ -17,7 +17,7 @@ export const kickPlayer = gql`
       }
     }
   }
-`;
+`
 
 export const setPlayerGameMode = gql`
   mutation SetPlayerGameMode($name: String!, $gamemode: String!) {
@@ -28,7 +28,7 @@ export const setPlayerGameMode = gql`
       }
     }
   }
-`;
+`
 
 export const setPlayerHealth = gql`
   mutation SetPlayerHealth($name: String!, $health: Int!) {
@@ -39,7 +39,7 @@ export const setPlayerHealth = gql`
       }
     }
   }
-`;
+`
 
 export const setPlayerLevel = gql`
   mutation SetPlayerLevel($name: String!, $level: Int!) {
@@ -50,7 +50,7 @@ export const setPlayerLevel = gql`
       }
     }
   }
-`;
+`
 
 export const setPlayerFoodLevel = gql`
   mutation SetPlayerLevel($name: String!, $foodLevel: Int!) {
@@ -61,4 +61,4 @@ export const setPlayerFoodLevel = gql`
       }
     }
   }
-`;
+`
