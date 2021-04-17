@@ -5,22 +5,23 @@
   </div>
 </template>
 <script lang="ts">
-import Vue from "vue";
-import Component from "vue-class-component";
-import translatedCopy from "~/locale/translated-copy";
+import Vue from "vue"
+import Component from "vue-class-component"
+import translatedCopy from "~/locale/translated-copy"
 
 @Component
 export default class ServerTitle extends Vue {
-  get serverName() {
-    return this.$store.state.server.name ?? translatedCopy('default.title')
-  }
-  get serverMessageOfTheDay() {
-    return this.$store.state.server.motd ?? translatedCopy('default.shameless-plug')
+  get serverName () {
+    return this.$store.state.server.name ?? translatedCopy("default.title")
   }
 
-  mounted() {
+  get serverMessageOfTheDay () {
+    return this.$store.state.server.motd ?? translatedCopy("default.shameless-plug")
+  }
+
+  mounted () {
     if (this.$auth.loggedIn) {
-      this.$store.dispatch('server/fetchHeaderInfo')
+      this.$store.dispatch("server/fetchHeaderInfo")
     }
   }
 }

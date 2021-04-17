@@ -1,6 +1,6 @@
-const {merge} = require('lodash');
-require('dotenv').config();
-const {discord} = require('./config/auth/strategies/discord');
+const { merge } = require('lodash')
+require('dotenv').config()
+const { discord } = require('./config/auth/strategies/discord')
 const nuxtConfig = {
   // Target (https://go.nuxtjs.dev/config-target)
   target: 'static',
@@ -11,11 +11,11 @@ const nuxtConfig = {
   head: {
     title: 'Minecraft GraphQL Panel',
     meta: [
-      {charset: 'utf-8'},
-      {name: 'viewport', content: 'width=device-width, initial-scale=1'},
-      {hid: 'description', name: 'description', content: ''}
+      { charset: 'utf-8' },
+      { name: 'viewport', content: 'width=device-width, initial-scale=1' },
+      { hid: 'description', name: 'description', content: '' }
     ],
-    link: [{rel: 'icon', type: 'image/x-icon', href: '/favicon.ico'}],
+    link: [{ rel: 'icon', type: 'image/x-icon', href: '/favicon.ico' }],
     script: []
   },
 
@@ -71,15 +71,15 @@ const nuxtConfig = {
   build: {},
 
   router: {
-    extendRoutes(routes, resolve) {
+    extendRoutes (routes, resolve) {
       routes.push({
         name: 'custom',
         path: '*',
         component: resolve(__dirname, 'pages/404.vue')
-      });
+      })
     }
   }
-};
+}
 export default merge(
   nuxtConfig,
   {
@@ -94,4 +94,4 @@ export default merge(
       ENDPOINT_URL: process.env.ENDPOINT_URL
     }
   }
-);
+)

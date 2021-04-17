@@ -3,6 +3,6 @@ export type IToasted = Record<
   {
     target?: string;
     message?: string;
-    type: 'success' | 'error';
+    type: "success" | "error";
   }
 >;

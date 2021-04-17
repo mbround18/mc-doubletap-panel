@@ -22,14 +22,14 @@
 </template>
 
 <script lang="ts">
-import Vue from "vue";
-import Component from "vue-class-component";
-import {Prop} from "vue-property-decorator";
-import Translated from "~/components/translated.vue";
-import ActionMenu from "~/components/veutify-wrapped/action-menu.vue";
-import ConfirmDialog from "~/components/veutify-wrapped/confirm-dialog.vue";
+import Vue from "vue"
+import Component from "vue-class-component"
+import { Prop } from "vue-property-decorator"
+import Translated from "~/components/translated.vue"
+import ActionMenu from "~/components/veutify-wrapped/action-menu.vue"
+import ConfirmDialog from "~/components/veutify-wrapped/confirm-dialog.vue"
 @Component({
-  components: {ConfirmDialog, ActionMenu, Translated}
+  components: { ConfirmDialog, ActionMenu, Translated }
 })
 export default class Player extends Vue {
   $refs!: {
@@ -41,89 +41,85 @@ export default class Player extends Vue {
 
   moderateReason = "Removed by Operator."
 
-  async moderateAction(action: 'kick'|'ban') {
-    const {name, moderateReason: reason} = this;
-    const confirm = await this.$refs.confirmModerate.open({action, name})
+  async moderateAction (action: "kick"|"ban") {
+    const { name, moderateReason: reason } = this
+    const confirm = await this.$refs.confirmModerate.open({ action, name })
     if (confirm) {
-      await this.$store.dispatch(`player/${action}`, {name,  reason})
+      await this.$store.dispatch(`player/${action}`, { name, reason })
     }
   }
 
-  get moderateActions() {
-    const {name} = this;
+  get moderateActions () {
     return [
       {
-        color: 'red',
-        icon: 'mdi-kabaddi',
-        target: 'player.component.action.moderate.kick',
-        callback: () => this.moderateAction('kick')
+        color: "red",
+        icon: "mdi-kabaddi",
+        target: "player.component.action.moderate.kick",
+        callback: () => this.moderateAction("kick")
       },
       {
-        color: 'red',
-        icon: 'mdi-gavel',
-        target: 'player.component.action.moderate.ban',
-        callback: () =>  this.moderateAction('ban')
+        color: "red",
+        icon: "mdi-gavel",
+        target: "player.component.action.moderate.ban",
+        callback: () => this.moderateAction("ban")
       }
     ]
   }
 
-  get stateActions() {
-    const {name} = this;
+  get stateActions () {
     return [
       {
         color: "blue",
-        icon: 'mdi-food-drumstick',
-        target: 'player.component.action.state.feed',
+        icon: "mdi-food-drumstick",
+        target: "player.component.action.state.feed",
         callback: () => this.setFoodLevel(20)
       },
       {
-        color: 'pink',
-        icon: 'mdi-heart',
-        target: 'player.component.action.state.heal',
+        color: "pink",
+        icon: "mdi-heart",
+        target: "player.component.action.state.heal",
         callback: () => this.setHealth(20)
       },
       {
-        color: 'red',
-        icon: 'mdi-skull',
-        target: 'player.component.action.state.kill',
+        color: "red",
+        icon: "mdi-skull",
+        target: "player.component.action.state.kill",
         callback: () => this.setHealth(0)
       },
       {
-        color: 'orange',
-        icon: 'mdi-sword-cross',
-        target: 'player.component.action.state.level',
+        color: "orange",
+        icon: "mdi-sword-cross",
+        target: "player.component.action.state.level",
         callback: () => this.setLevel(129)
       }
     ]
   }
 
-  get gameModeActions() {
-    const {name} = this;
-    return ['SURVIVAL', 'CREATIVE', 'ADVENTURE', 'SPECTATOR'].map(gamemode => ({
-      color: 'blue',
+  get gameModeActions () {
+    const { name } = this
+    return ["SURVIVAL", "CREATIVE", "ADVENTURE", "SPECTATOR"].map(gamemode => ({
+      color: "blue",
       target: `player.component.action.gamemode.${gamemode.toLowerCase()}`,
       disabled: this.gamemode === gamemode,
       callback: () =>
-        this.$store.dispatch('player/setGameMode', { name, gamemode })
+        this.$store.dispatch("player/setGameMode", { name, gamemode })
     }))
   }
 
-  async setLevel(level: number) {
-    const {name} = this;
-    await this.$store.dispatch('player/setLevel', {name, level})
+  async setLevel (level: number) {
+    const { name } = this
+    await this.$store.dispatch("player/setLevel", { name, level })
   }
 
-
-  async setHealth(health: number) {
-    const {name} = this;
-    await this.$store.dispatch('player/setHealth', {name, health})
+  async setHealth (health: number) {
+    const { name } = this
+    await this.$store.dispatch("player/setHealth", { name, health })
   }
 
-  async setFoodLevel(foodLevel: number) {
-    const {name} = this;
-    await this.$store.dispatch('player/setFoodLevel', {name, foodLevel})
+  async setFoodLevel (foodLevel: number) {
+    const { name } = this
+    await this.$store.dispatch("player/setFoodLevel", { name, foodLevel })
   }
 }
 
 </script>
-

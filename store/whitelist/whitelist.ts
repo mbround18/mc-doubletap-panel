@@ -1,4 +1,4 @@
-import {gql} from 'graphql-request';
+import { gql } from "graphql-request"
 
 export const setAllowListStatus = gql`
   mutation SetAllowListStatus($status: Boolean!) {
@@ -8,7 +8,7 @@ export const setAllowListStatus = gql`
       }
     }
   }
-`;
+`
 
 export const fetchAllowList = gql`
   query FetchAllowList {
@@ -19,7 +19,7 @@ export const fetchAllowList = gql`
       }
     }
   }
-`;
+`
 
 export const addToAllowList = gql`
   mutation AddToWhitelist($name: String!) {
@@ -30,7 +30,7 @@ export const addToAllowList = gql`
       }
     }
   }
-`;
+`
 
 export const removeFromAllowList = gql`
   mutation RemoveToWhitelist($name: String!) {
@@ -41,4 +41,4 @@ export const removeFromAllowList = gql`
       }
     }
   }
-`;
+`

@@ -15,23 +15,25 @@
 </template>
 
 <script>
-import Vue from 'vue';
-import Component from "vue-class-component";
-import Translated from "~/components/translated";
+import Vue from "vue"
+import Component from "vue-class-component"
+import Translated from "~/components/translated"
 @Component({
-  components: {Translated}
+  components: { Translated }
 })
 export default class Login extends Vue {
-  get isLoggedIn() {
-    return this.$auth.loggedIn;
+  get isLoggedIn () {
+    return this.$auth.loggedIn
   }
-  login() {
-    console.log('Initializing Log In')
-    this.$auth.loginWith('discord')
+
+  login () {
+    console.log("Initializing Log In")
+    this.$auth.loginWith("discord")
   }
-  logout() {
+
+  logout () {
     this.$auth.logout()
-    location.reload();
+    location.reload()
   }
 }
 </script>

@@ -13,16 +13,16 @@
 </template>
 
 <script lang="ts">
-import Vue from "vue";
-import Component from "vue-class-component";
-import Login from "../components/login.vue";
-import ServerTitle from "../components/server/server-title.vue";
+import Vue from "vue"
+import Component from "vue-class-component"
+import Login from "../components/login.vue"
+import ServerTitle from "../components/server/server-title.vue"
 
 @Component({
-  components: {ServerTitle, Login}
+  components: { ServerTitle, Login }
 })
-export default class DefaultLayout extends Vue{
-  get authenticated() {
+export default class DefaultLayout extends Vue {
+  get authenticated () {
     return this.$auth.loggedIn
   }
 }

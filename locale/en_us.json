@@ -30,7 +30,7 @@
   "player.component.action.state.heal": "Heal",
   "player.component.action.state.feed": "Feed",
   "player.component.action.state.level": "Max Level",
-  "player.component.confirm-dialog.moderate.title":  "${action} ${name}?",
+  "player.component.confirm-dialog.moderate.title": "${action} ${name}?",
   "player.component.confirm-dialog.moderate.message": "Are you sure you want to ${action} ${name}?",
   "player.component.confirm-dialog.moderate.reason": "Reason",
   "player.toast.ban.success": "You have perma-yeeted ${name}<br>${reason}",

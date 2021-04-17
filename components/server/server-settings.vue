@@ -32,49 +32,49 @@
 </template>
 
 <script lang="ts">
-import Vue from "vue";
-import {get} from 'lodash'
-import Component from "vue-class-component";
-import translatedCopy from "~/locale/translated-copy";
-import ConfirmDialog from "~/components/veutify-wrapped/confirm-dialog.vue";
-import Translated from "~/components/translated.vue";
+import Vue from "vue"
+import { get } from "lodash"
+import Component from "vue-class-component"
+import translatedCopy from "~/locale/translated-copy"
+import ConfirmDialog from "~/components/veutify-wrapped/confirm-dialog.vue"
+import Translated from "~/components/translated.vue"
 @Component({
-  components: {Translated, ConfirmDialog}
+  components: { Translated, ConfirmDialog }
 })
 export default class ServerSettings extends Vue {
   $refs!: {
     confirmWhitelist: ConfirmDialog
   }
 
-  get labels() {
+  get labels () {
     return {
-      serverIp: translatedCopy('server-settings.component.field.server-ip')
+      serverIp: translatedCopy("server-settings.component.field.server-ip")
     }
   }
 
-  get serverInfo() {
-    return this.$store.state.server;
-  }
-  get hasWhitelist() {
-    return this.$store.state.server.hasWhitelist;
+  get serverInfo () {
+    return this.$store.state.server
   }
 
-  async toggleWhitelist() {
+  get hasWhitelist () {
+    return this.$store.state.server.hasWhitelist
+  }
+
+  async toggleWhitelist () {
     const status = !this.hasWhitelist
-    const openDialog = get(this.$refs,'confirmWhitelist.open')
+    const openDialog = get(this.$refs, "confirmWhitelist.open")
     const confirm = await openDialog()
     if (confirm) {
-      await this.$store.dispatch('server/setWhitelistStatus', status);
-      await this.$store.dispatch('server/fetchServerInfo');
+      await this.$store.dispatch("server/setWhitelistStatus", status)
+      await this.$store.dispatch("server/fetchServerInfo")
     } else {
-      await this.$store.commit('server/set', { hasWhitelist: !status })
+      await this.$store.commit("server/set", { hasWhitelist: !status })
     }
   }
 
-  mounted() {
-    this.$store.dispatch('server/fetchServerInfo');
+  mounted () {
+    this.$store.dispatch("server/fetchServerInfo")
   }
-
 }
 
 </script>

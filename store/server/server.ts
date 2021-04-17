@@ -1,4 +1,4 @@
-import {gql} from 'graphql-request';
+import { gql } from "graphql-request"
 
 export const fetchServerHeaderInfo = gql`
   query ServerHeaderInfo {
@@ -7,7 +7,7 @@ export const fetchServerHeaderInfo = gql`
       motd
     }
   }
-`;
+`
 
 export const fetchServerInfo = gql`
   query ServerInfo {
@@ -18,7 +18,7 @@ export const fetchServerInfo = gql`
       hasWhitelist
     }
   }
-`;
+`
 
 export const fetchOnlinePlayers = gql`
   query OnlinePlayers {
@@ -38,4 +38,4 @@ export const fetchOnlinePlayers = gql`
       }
     }
   }
-`;
+`
