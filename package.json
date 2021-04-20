@@ -23,7 +23,7 @@
     "@nuxtjs/auth-next": "^5.0.0-1618502945.2770f1f",
     "@nuxtjs/axios": "^5.13.1",
     "cookie": "^0.4.1",
-    "core-js": "^3.10.1",
+    "core-js": "^3.10.2",
     "dotenv": "^8.2.0",
     "graphql": "^15.5.0",
     "graphql-request": "^3.4.0",
