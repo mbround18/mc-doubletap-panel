@@ -46,10 +46,10 @@ export default class ServerStore extends VuexModule {
     const {
       server: { onlinePlayers, maxPlayers }
     }: {
-      server: {onlinePlayers: IOnlinePlayer[]; maxPlayers: number};
+      server: { onlinePlayers: IOnlinePlayer[]; maxPlayers: number };
     } = await gqlClient.request(fetchOnlinePlayers)
     if (onlinePlayers) {
-      const updatedPlayers = onlinePlayers.map((player) => {
+      const updatedPlayers = onlinePlayers.map(player => {
         player.health = round(player.health)
         player.exhaustion = round(player.exhaustion, 2)
         return player

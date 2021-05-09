@@ -20,7 +20,7 @@ const gqlClient = new GraphQL("server")
 @Module({ stateFactory: true })
 export default class ServerStore extends VuexModule {
   @Action
-  async ban (payload: {name: string; reason: string}) {
+  async ban (payload: { name: string; reason: string }) {
     const data = await gqlClient.request(banPlayer, payload)
     if (data) {
       Vue.toasted.global.playerBanSuccess(payload)
@@ -28,7 +28,7 @@ export default class ServerStore extends VuexModule {
   }
 
   @Action
-  async kick (payload: {name: string; reason: string}) {
+  async kick (payload: { name: string; reason: string }) {
     const data = await gqlClient.request(kickPlayer, payload)
     if (data) {
       Vue.toasted.global.playerKickSuccess(payload)

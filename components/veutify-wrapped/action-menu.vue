@@ -1,6 +1,6 @@
 <template>
   <div :class="actionMenuClasses">
-    <template v-for="action in actions" class="p-10" >
+    <template v-for="action in actions" class="p-10">
       <v-btn
         class="mx-2"
         :color="action.color"
@@ -15,18 +15,18 @@
   </div>
 </template>
 
-<script lang="ts" >
+<script lang="ts">
 import Vue from "vue"
 import Component from "vue-class-component"
 import { Prop } from "vue-property-decorator"
 import Translated from "~/components/translated.vue"
 
 export interface IAction {
-  color: string
-  icon: string
-  target: string
-  disabled?: boolean
-  callback: () => void
+  color: string;
+  icon: string;
+  target: string;
+  disabled?: boolean;
+  callback: () => void;
 }
 
 @Component({
@@ -37,8 +37,13 @@ export default class ActionMenu extends Vue {
   @Prop(Array) actions!: IAction[];
 
   get actionMenuClasses () {
-    return ["flex", "flex-wrap", { "flex-column": this.direction === "vertical" }, "space-x-1", "p-4"]
+    return [
+      "flex",
+      "flex-wrap",
+      { "flex-column": this.direction === "vertical" },
+      "space-x-1",
+      "p-4"
+    ]
   }
 }
-
 </script>

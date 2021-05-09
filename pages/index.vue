@@ -1,8 +1,12 @@
 <template>
-  <div class="flex flex-wrap space-x-3 space-y-3" id="index-page" v-if="$auth.loggedIn">
-    <server-settings class="lg:w-1/3"/>
-    <player-list  />
-    <whitelist  v-if="hasWhitelist" />
+  <div
+    class="flex flex-wrap space-x-3 space-y-3"
+    id="index-page"
+    v-if="$auth.loggedIn"
+  >
+    <server-settings class="lg:w-1/3" />
+    <player-list />
+    <whitelist v-if="hasWhitelist" />
   </div>
   <div v-else>
     <h1>Please Log in</h1>
@@ -26,6 +30,4 @@ export default class Index extends Vue {
 }
 </script>
 
-<style lang="scss">
-
-</style>
+<style lang="scss"></style>

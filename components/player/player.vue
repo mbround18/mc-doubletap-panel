@@ -33,15 +33,15 @@ import ConfirmDialog from "~/components/veutify-wrapped/confirm-dialog.vue"
 })
 export default class Player extends Vue {
   $refs!: {
-    confirmModerate: ConfirmDialog
-  }
+    confirmModerate: ConfirmDialog;
+  };
 
   @Prop(String) name!: string;
   @Prop(String) gamemode!: string;
 
-  moderateReason = "Removed by Operator."
+  moderateReason = "Removed by Operator.";
 
-  async moderateAction (action: "kick"|"ban") {
+  async moderateAction (action: "kick" | "ban") {
     const { name, moderateReason: reason } = this
     const confirm = await this.$refs.confirmModerate.open({ action, name })
     if (confirm) {
@@ -121,5 +121,4 @@ export default class Player extends Vue {
     await this.$store.dispatch("player/setFoodLevel", { name, foodLevel })
   }
 }
-
 </script>

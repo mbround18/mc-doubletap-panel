@@ -54,7 +54,7 @@ export class GraphQL {
 
       // Add catch to kill subscription on window close
       if (process.browser) {
-        window.addEventListener("unload", (event) => {
+        window.addEventListener("unload", event => {
           subscription.unsubscribe()
         })
       }

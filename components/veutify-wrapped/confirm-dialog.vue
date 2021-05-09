@@ -19,21 +19,28 @@
           outlined
           aria-required="true"
           :label="translatedInputLabel"
-          :value="inputValue" />
+          :value="inputValue"
+        />
       </v-card-text>
       <v-card-actions class="pt-3">
         <v-spacer></v-spacer>
-        <v-btn v-if="cancelable"
+        <v-btn
+          v-if="cancelable"
           class="body-2 font-weight-bold float-left"
-          @click.native="cancel" text outlined color="red"
+          @click.native="cancel"
+          text
+          outlined
+          color="red"
         >
           <translated :target="nOption" />
         </v-btn>
         <v-btn
           color="primary"
           class="body-2 font-weight-bold float-right"
-          filled @click.native="agree"
-        ><translated :target="yOption" /></v-btn>
+          filled
+          @click.native="agree"
+          ><translated :target="yOption"
+        /></v-btn>
       </v-card-actions>
     </v-card>
   </v-dialog>
@@ -48,8 +55,8 @@ import { merge, set, get } from "lodash"
 import translatedCopy from "~/locale/translated-copy"
 
 export interface IOpenOptions {
-  width: number
-  zIndex: number
+  width: number;
+  zIndex: number;
 }
 
 @Component({
@@ -58,13 +65,13 @@ export interface IOpenOptions {
 export default class ConfirmDialog extends Vue {
   @Prop(String) title!: string;
   @Prop(String) message!: string;
-  @Prop({ type: String, default: "accept" }) type!: string
+  @Prop({ type: String, default: "accept" }) type!: string;
   @Prop(Object) variables!: object;
   @Prop(Boolean) cancelable!: boolean;
   @Prop(String) inputLabel!: string;
   @Prop(String) inputValue!: string;
 
-  localVariables = {}
+  localVariables = {};
 
   dialog = false;
   resolve = (resolve?: any) => resolve;
@@ -98,7 +105,11 @@ export default class ConfirmDialog extends Vue {
       set(this, "options", merge(this.options, options))
     }
     if (variables) {
-      set(this, "localVariables", merge(this.variables, this.localVariables, variables))
+      set(
+        this,
+        "localVariables",
+        merge(this.variables, this.localVariables, variables)
+      )
     }
     return new Promise((resolve, reject) => {
       this.resolve = resolve

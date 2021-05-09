@@ -1,9 +1,6 @@
 <template>
   <v-app dark class="overflow-hidden">
-    <v-app-bar
-      absolute
-      elevate-on-scroll
-    >
+    <v-app-bar absolute elevate-on-scroll>
       <server-title />
       <v-spacer />
       <login />
@@ -26,20 +23,12 @@ export default class DefaultLayout extends Vue {
     return this.$auth.loggedIn
   }
 }
-
 </script>
 
 <style>
 html {
-  font-family:
-    'Source Sans Pro',
-    -apple-system,
-    BlinkMacSystemFont,
-    'Segoe UI',
-    Roboto,
-    'Helvetica Neue',
-    Arial,
-    sans-serif;
+  font-family: "Source Sans Pro", -apple-system, BlinkMacSystemFont, "Segoe UI",
+    Roboto, "Helvetica Neue", Arial, sans-serif;
   font-size: 16px;
   word-spacing: 1px;
   -ms-text-size-adjust: 100%;
