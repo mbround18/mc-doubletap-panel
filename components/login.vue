@@ -14,10 +14,11 @@
   </div>
 </template>
 
-<script>
+<script lang="ts">
 import Vue from "vue"
 import Component from "vue-class-component"
-import Translated from "~/components/translated"
+import Translated from "~/components/translated.vue"
+
 @Component({
   components: { Translated }
 })
@@ -38,6 +39,4 @@ export default class Login extends Vue {
 }
 </script>
 
-<style scoped>
-
-</style>
+<style scoped></style>

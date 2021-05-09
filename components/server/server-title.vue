@@ -1,7 +1,7 @@
 <template>
   <div class="flex flex-column">
-    <h1 class="purple--text font-bold">{{serverName}}</h1>
-    <small class="italic" >{{serverMessageOfTheDay}}</small>
+    <h1 class="purple--text font-bold">{{ serverName }}</h1>
+    <small class="italic">{{ serverMessageOfTheDay }}</small>
   </div>
 </template>
 <script lang="ts">
@@ -16,7 +16,9 @@ export default class ServerTitle extends Vue {
   }
 
   get serverMessageOfTheDay () {
-    return this.$store.state.server.motd ?? translatedCopy("default.shameless-plug")
+    return (
+      this.$store.state.server.motd ?? translatedCopy("default.shameless-plug")
+    )
   }
 
   mounted () {

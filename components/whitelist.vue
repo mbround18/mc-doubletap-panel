@@ -3,39 +3,26 @@
     <v-card-title>
       <translated target="whitelist.component.title" />
     </v-card-title>
-   <v-card-text>
-     <v-spacer></v-spacer>
-     <v-data-table
-       dark
-       :items="players"
-       :headers="headers"
-       :loading="isLoading"
-     >
-       <template v-slot:[`item.actions`]="{ item }">
-         <v-icon
-           small
-           @click="removeFromWhitelist(item)"
-         >
-           mdi-delete
-         </v-icon>
-       </template>
-     </v-data-table>
-   </v-card-text>
+    <v-card-text>
+      <v-spacer></v-spacer>
+      <v-data-table
+        dark
+        :items="players"
+        :headers="headers"
+        :loading="isLoading"
+      >
+        <template v-slot:[`item.actions`]="{ item }">
+          <v-icon small @click="removeFromWhitelist(item)">
+            mdi-delete
+          </v-icon>
+        </template>
+      </v-data-table>
+    </v-card-text>
 
     <v-card-actions>
-      <v-dialog
-        v-model="dialog"
-        persistent
-        max-width="600px"
-
-      >
+      <v-dialog v-model="dialog" persistent max-width="600px">
         <template v-slot:activator="{ on, attrs }">
-          <v-btn
-            color="primary"
-            dark
-            v-bind="attrs"
-            v-on="on"
-          >
+          <v-btn color="primary" dark v-bind="attrs" v-on="on">
             Add Player
           </v-btn>
         </template>
@@ -54,18 +41,10 @@
           </v-card-text>
           <v-card-actions>
             <v-spacer></v-spacer>
-            <v-btn
-              color="blue darken-1"
-              text
-              @click="dialog = false"
-            >
+            <v-btn color="blue darken-1" text @click="dialog = false">
               Close
             </v-btn>
-            <v-btn
-              color="blue darken-1"
-              text
-              @click="addToWhitelist"
-            >
+            <v-btn color="blue darken-1" text @click="addToWhitelist">
               Add
             </v-btn>
           </v-card-actions>
@@ -73,7 +52,6 @@
       </v-dialog>
     </v-card-actions>
   </v-card>
-
 </template>
 
 <script lang="ts">
@@ -88,7 +66,7 @@ import Translated from "~/components/translated.vue"
   components: { Translated }
 })
 export default class Whitelist extends Vue {
-  logger = new Logger("components/whitelist")
+  logger = new Logger("components/whitelist");
   isLoading = true;
 
   dialog = false;
@@ -143,6 +121,4 @@ export default class Whitelist extends Vue {
 }
 </script>
 
-<style scoped>
-
-</style>
+<style scoped></style>

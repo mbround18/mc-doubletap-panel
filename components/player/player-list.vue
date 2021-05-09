@@ -5,8 +5,18 @@
         <translated target="player-list.component.title" />
       </v-card-title>
       <v-card-text>
-        <p><translated target="player-list.component.maxPlayers" :value="server"/></p>
-        <p><translated target="player-list.component.currentPlayers" :value="count"/></p>
+        <p>
+          <translated
+            target="player-list.component.maxPlayers"
+            :value="server"
+          />
+        </p>
+        <p>
+          <translated
+            target="player-list.component.currentPlayers"
+            :value="count"
+          />
+        </p>
         <v-input v-model="search"></v-input>
         <v-data-table
           show-expand
@@ -19,7 +29,7 @@
           dense
         >
           <template v-slot:[`item.healthInfo`]="{ item }">
-            <td>{{item.health}}/{{item.maxHealth}}</td>
+            <td>{{ item.health }}/{{ item.maxHealth }}</td>
           </template>
           <template v-slot:expanded-item="{ headers, item }">
             <td :colspan="headers.length">
@@ -47,7 +57,7 @@ import Player from "~/components/player/player.vue"
 export default class PlayerList extends Vue {
   search = "";
   isLoading = true;
-  logger = new Logger("components/player-list")
+  logger = new Logger("components/player-list");
 
   get cardTitle () {
     return translatedCopy("player-list.component.title")
@@ -64,12 +74,11 @@ export default class PlayerList extends Vue {
       { value: "healthInfo" },
       { text: "", value: "expanded-item" }
     ]
-    return playerValues.map(
-      ({ text, value }: any) => ({
-        text: text ?? translatedCopy(`player-list.component.onlinePlayers.${value}`),
-        value
-      })
-    )
+    return playerValues.map(({ text, value }: any) => ({
+      text:
+        text ?? translatedCopy(`player-list.component.onlinePlayers.${value}`),
+      value
+    }))
   }
 
   get server () {
@@ -90,11 +99,11 @@ export default class PlayerList extends Vue {
 
   mounted () {
     this.$store.dispatch("server/fetchServerInfo")
-    this.$store.dispatch("server/subscribeFetchOnlinePlayers").then(() => (this.isLoading = false))
+    this.$store
+      .dispatch("server/subscribeFetchOnlinePlayers")
+      .then(() => (this.isLoading = false))
   }
 }
 </script>
 
-<style lang="css">
-
-</style>
+<style lang="css"></style>

@@ -16,7 +16,7 @@ function registerToastedNotification (
     // @ts-expect-error
     ([key, { target, message, type }]: [
       string,
-      {target?: string; message?: string; type: string}
+      { target?: string; message?: string; type: string }
     ]) => {
       const executionName = `${namespace}${startCase(key)}`.replace(/\s/g, "")
       const executionOptions = {

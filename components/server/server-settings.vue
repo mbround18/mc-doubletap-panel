@@ -6,8 +6,20 @@
         <v-container>
           <v-row>
             <v-col>
-              <v-text-field :label="labels.serverIp" :value="`${serverInfo.ip}:${serverInfo.port}`" disabled outlined readonly />
-              <v-text-field :label="labels.serverIp" :value="serverInfo.version" disabled outlined readonly />
+              <v-text-field
+                :label="labels.serverIp"
+                :value="`${serverInfo.ip}:${serverInfo.port}`"
+                disabled
+                outlined
+                readonly
+              />
+              <v-text-field
+                :label="labels.serverIp"
+                :value="serverInfo.version"
+                disabled
+                outlined
+                readonly
+              />
             </v-col>
             <v-col>
               <div>
@@ -21,7 +33,9 @@
                   label="Whitelist"
                   :value="serverInfo.hasWhitelist"
                   v-on:click.native="toggleWhitelist"
-                ><translated target="server-settings.component.action.whitelist"/></v-switch>
+                  ><translated
+                    target="server-settings.component.action.whitelist"
+                /></v-switch>
               </div>
             </v-col>
           </v-row>
@@ -43,8 +57,8 @@ import Translated from "~/components/translated.vue"
 })
 export default class ServerSettings extends Vue {
   $refs!: {
-    confirmWhitelist: ConfirmDialog
-  }
+    confirmWhitelist: ConfirmDialog;
+  };
 
   get labels () {
     return {
@@ -76,5 +90,4 @@ export default class ServerSettings extends Vue {
     this.$store.dispatch("server/fetchServerInfo")
   }
 }
-
 </script>
