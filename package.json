@@ -34,7 +34,7 @@
     "netlify-identity-widget": "1.9.1",
     "nuxt": "2.15.4",
     "postcss-nested": "5.0.5",
-    "rxjs": "6.6.7",
+    "rxjs": "7.0.0",
     "vue": "2.6.12",
     "vue-class-component": "7.2.6",
     "vue-property-decorator": "9.1.2",
