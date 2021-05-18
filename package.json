@@ -44,7 +44,7 @@
     "vuex-persistedstate": "4.0.0-beta.3"
   },
   "devDependencies": {
-    "@babel/core": "7.14.0",
+    "@babel/core": "7.14.3",
     "@nuxt/types": "2.15.6",
     "@nuxt/typescript-build": "2.1.0",
     "@nuxtjs/eslint-config": "6.0.0",
