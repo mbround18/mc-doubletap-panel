@@ -73,6 +73,6 @@
     "vue-jest": "3.0.7",
     "vue-template-compiler": "2.6.12",
     "vuetify": "2.5.6",
-    "webpack": "5.43.0"
+    "webpack": "5.44.0"
   }
 }
