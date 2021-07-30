@@ -72,7 +72,7 @@
     "typescript": "4.2.4",
     "vue-jest": "3.0.7",
     "vue-template-compiler": "2.6.12",
-    "vuetify": "2.5.7",
+    "vuetify": "2.5.8",
     "webpack": "5.47.1"
   }
 }
