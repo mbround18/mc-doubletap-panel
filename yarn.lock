@@ -10537,7 +10537,7 @@ fsevents@^1.2.7:
     vue-class-component: 7.2.6
     vue-jest: 3.0.7
     vue-property-decorator: 9.1.2
-    vue-template-compiler: ^2.6.14
+    vue-template-compiler: 2.6.14
     vue-toasted: 1.1.28
     vuetify: 2.5.8
     vuex: 3.6.2
@@ -16171,7 +16171,7 @@ fsevents@^1.2.7:
   languageName: node
   linkType: hard
 
-"vue-template-compiler@npm:^2.6.12, vue-template-compiler@npm:^2.6.14":
+"vue-template-compiler@npm:2.6.14, vue-template-compiler@npm:^2.6.12, vue-template-compiler@npm:^2.6.14":
   version: 2.6.14
   resolution: "vue-template-compiler@npm:2.6.14"
   dependencies:
