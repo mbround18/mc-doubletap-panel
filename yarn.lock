@@ -5530,10 +5530,10 @@ __metadata:
   languageName: node
   linkType: hard
 
-"core-js@npm:3.16.4":
-  version: 3.16.4
-  resolution: "core-js@npm:3.16.4"
-  checksum: 6f1b82b0b9ef5bc818133b9f5f5e83cdd15f83a2fd56f9ee7edc9a29f183e74c00413e84febe07c2e2f04f55edc031b8ed7c1188f9540e97abd9bc7a20f7a9de
+"core-js@npm:3.17.0":
+  version: 3.17.0
+  resolution: "core-js@npm:3.17.0"
+  checksum: bb1c2b7d864763b1a43e6b6de710bf1a5e4114b23b749d541301a9a4503397eda7bf51fc3949ad0ff24f3a8c7ac2e20af7ee5f2a7f0910ae0cfec4e0d4946f5e
   languageName: node
   linkType: hard
 
@@ -10649,7 +10649,7 @@ fsevents@^1.2.7:
     babel-eslint: 10.1.0
     babel-jest: 27.1.0
     cookie: 0.4.1
-    core-js: 3.16.4
+    core-js: 3.17.0
     dotenv: 10.0.0
     eslint: 7.32.0
     eslint-plugin-markdown: 2.2.0
