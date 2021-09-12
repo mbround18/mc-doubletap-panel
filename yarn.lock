@@ -6867,14 +6867,14 @@ __metadata:
   languageName: node
   linkType: hard
 
-"eslint-plugin-markdown@npm:2.2.0":
-  version: 2.2.0
-  resolution: "eslint-plugin-markdown@npm:2.2.0"
+"eslint-plugin-markdown@npm:2.2.1":
+  version: 2.2.1
+  resolution: "eslint-plugin-markdown@npm:2.2.1"
   dependencies:
     mdast-util-from-markdown: ^0.8.5
   peerDependencies:
     eslint: ">=6.0.0"
-  checksum: 004e77a269c406e94196c0df62ae20ace629370d6416f1d0a5d3cee30208efe3190be11ac902d8ffdc307573805f47d5af294eb47dd0d8ebe72ba94de60b19a6
+  checksum: 68be3ac504f0bef6a50b092b4a6d46188e4be713c9fa18dcab2a5dff577714c71b5064219214db8324629f36128f1f13e2d5ba55ef2f053fb48fb65576db9c66
   languageName: node
   linkType: hard
 
@@ -10652,7 +10652,7 @@ fsevents@^1.2.7:
     core-js: 3.17.3
     dotenv: 10.0.0
     eslint: 7.32.0
-    eslint-plugin-markdown: 2.2.0
+    eslint-plugin-markdown: 2.2.1
     eslint-plugin-prettier: 4.0.0
     graphql: 15.5.3
     graphql-request: 3.5.0
