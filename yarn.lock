@@ -10681,7 +10681,7 @@ fsevents@^1.2.7:
     vuetify: 2.5.8
     vuex: 3.6.2
     vuex-module-decorators: 1.0.1
-    vuex-persistedstate: 4.0.0
+    vuex-persistedstate: 4.1.0
     webpack: 5.53.0
   languageName: unknown
   linkType: soft
@@ -16375,15 +16375,15 @@ fsevents@^1.2.7:
   languageName: node
   linkType: hard
 
-"vuex-persistedstate@npm:4.0.0":
-  version: 4.0.0
-  resolution: "vuex-persistedstate@npm:4.0.0"
+"vuex-persistedstate@npm:4.1.0":
+  version: 4.1.0
+  resolution: "vuex-persistedstate@npm:4.1.0"
   dependencies:
     deepmerge: ^4.2.2
     shvl: ^2.0.3
   peerDependencies:
     vuex: ^3.0 || ^4.0.0-rc
-  checksum: 676d020815b25ccd8848a9d35e389b2123b04be704e2b18f0b9c560867256bf72c3fb778ce9c5cd428975d7e3b4791bca42a15839a09d439a30a7cda95d962c2
+  checksum: f9dd42ea0e0118e0c579f9d9012ceeac17fdea66904780416cb2abed6e1a40c1fb1cec23d455de0d2480747e6226a58dbd36c23a35751904ffbc4f0499fed2c0
   languageName: node
   linkType: hard
 
