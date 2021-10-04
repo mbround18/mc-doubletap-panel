@@ -10689,7 +10689,7 @@ fsevents@^1.2.7:
     vuex: 3.6.2
     vuex-module-decorators: 1.0.1
     vuex-persistedstate: 4.1.0
-    webpack: 5.56.0
+    webpack: 5.56.1
   languageName: unknown
   linkType: soft
 
@@ -16571,9 +16571,9 @@ fsevents@^1.2.7:
   languageName: node
   linkType: hard
 
-"webpack@npm:5.56.0":
-  version: 5.56.0
-  resolution: "webpack@npm:5.56.0"
+"webpack@npm:5.56.1":
+  version: 5.56.1
+  resolution: "webpack@npm:5.56.1"
   dependencies:
     "@types/eslint-scope": ^3.7.0
     "@types/estree": ^0.0.50
@@ -16604,7 +16604,7 @@ fsevents@^1.2.7:
       optional: true
   bin:
     webpack: bin/webpack.js
-  checksum: 27eebf2ac518fe6198fe1933a1ba3a72fb34c6540319f63caed09c7d8bd9e5c3aef20805fb2122adecfbe3bc971b28ca09b1f809655cb1136e083549e09470d7
+  checksum: e5ead673155a5e9667c8ae5413af18739335b067e03ae4e6daefbf9bf648321267abc706d3c756b17c9224c5e31762c0de212e700cca34ab4ee1e069e7806b8a
   languageName: node
   linkType: hard
 
