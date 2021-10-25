@@ -2117,9 +2117,9 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@nuxtjs/eslint-config-typescript@npm:7.0.0":
-  version: 7.0.0
-  resolution: "@nuxtjs/eslint-config-typescript@npm:7.0.0"
+"@nuxtjs/eslint-config-typescript@npm:7.0.2":
+  version: 7.0.2
+  resolution: "@nuxtjs/eslint-config-typescript@npm:7.0.2"
   dependencies:
     "@nuxtjs/eslint-config": 7.0.0
     "@typescript-eslint/eslint-plugin": ^5.1.0
@@ -2127,7 +2127,7 @@ __metadata:
     eslint-import-resolver-typescript: ^2.5.0
   peerDependencies:
     eslint: ^8.1.0
-  checksum: 3e09fbedf3a63f2fb2122f69a9ba991586b59b614cd0bc9c19108cafdf125d5968ee1479176619fcdad949a7524f7bda6503e2a8fc35dce861d131f2b623be3f
+  checksum: 352bd38cba31b1bb4d974a6e3ff306bff81cad27dad0f5f73e94e141c258f18aff4049d896f768b2fb92bf459341627d897b4962aead3eeea8557f52baed0377
   languageName: node
   linkType: hard
 
@@ -10634,7 +10634,7 @@ fsevents@^1.2.7:
     "@nuxtjs/auth-next": 5.0.0-1624817847.21691f1
     "@nuxtjs/axios": 5.13.6
     "@nuxtjs/eslint-config": 7.0.0
-    "@nuxtjs/eslint-config-typescript": 7.0.0
+    "@nuxtjs/eslint-config-typescript": 7.0.2
     "@nuxtjs/eslint-module": 3.0.2
     "@nuxtjs/pwa": 3.3.5
     "@nuxtjs/tailwindcss": 4.2.1
