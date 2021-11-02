@@ -1,0 +1,15 @@
+{
+  "env": {
+    "targets": "> 0.25%, not dead"
+  },
+  "jsc": {
+    "externalHelpers": true,
+    "parser": {
+      "syntax": "typescript",
+      "tsx": true,
+      "dynamicImport": true,
+      "importAssertions": true,
+      "decorators": true
+    }
+  }
+}

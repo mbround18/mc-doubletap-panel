@@ -1,18 +1,19 @@
 module.exports = {
   env: {
     browser: true,
-    es2021: true
+    es2021: true,
   },
   extends: ["plugin:vue/essential", "standard"],
   parserOptions: {
     ecmaVersion: 12,
     parser: "@typescript-eslint/parser",
-    sourceType: "module"
+    sourceType: "module",
   },
   plugins: ["prettier", "vue", "@typescript-eslint"],
   rules: {
-    semi: 2,
+    semi: true,
     "no-useless-constructor": "off",
-    quotes: ["error", "double"]
-  }
+    quotes: ["error", "double"],
+    "comma-dangle": ["off", "always-multiline"],
+  },
 };

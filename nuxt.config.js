@@ -13,10 +13,10 @@ const nuxtConfig = {
     meta: [
       { charset: "utf-8" },
       { name: "viewport", content: "width=device-width, initial-scale=1" },
-      { hid: "description", name: "description", content: "" }
+      { hid: "description", name: "description", content: "" },
     ],
     link: [{ rel: "icon", type: "image/x-icon", href: "/favicon.ico" }],
-    script: []
+    script: [],
   },
 
   // Global CSS (https://go.nuxtjs.dev/config-css)
@@ -35,7 +35,7 @@ const nuxtConfig = {
     // https://go.nuxtjs.dev/tailwindcss
     "@nuxtjs/tailwindcss",
     // https://pwa.nuxtjs.org/
-    "@nuxtjs/pwa"
+    "@nuxtjs/pwa",
   ],
 
   // Modules (https://go.nuxtjs.dev/config-modules)
@@ -43,35 +43,42 @@ const nuxtConfig = {
     "@nuxtjs/auth",
     // https://go.nuxtjs.dev/axios
     "@nuxtjs/axios",
-    "@nuxtjs/vuetify"
+    "@nuxtjs/vuetify",
   ],
 
   vuetify: {
     theme: {
-      dark: true
-    }
+      dark: true,
+    },
   },
   // Axios module configuration (https://go.nuxtjs.dev/config-axios)
   axios: {},
   auth: {
     vuex: {
-      namespace: "auth"
+      namespace: "auth",
     },
     redirect: {
       login: "/",
       logout: "/",
-      callback: "/auth/invoke"
+      callback: "/auth/invoke",
     },
     strategies: {
-      local: false
-    }
+      local: false,
+    },
   },
 
   // Build Configuration (https://go.nuxtjs.dev/config-build)
   build: {
-    babel: {
-      plugins: [["@babel/plugin-proposal-private-methods", { loose: true }]]
-    }
+    extend(config, ctx) {
+      config.module.rules = config.module.rules.filter((rule) => {
+        return !rule.test.test("derp.mjsx");
+      });
+      config.module.rules.unshift({
+        test: /\.(m?[tj]sx?)$/i,
+        exclude: /(node_modules)/,
+        use: "swc-loader",
+      });
+    },
   },
 
   router: {
@@ -79,23 +86,23 @@ const nuxtConfig = {
       routes.push({
         name: "custom",
         path: "*",
-        component: resolve(__dirname, "pages/404.vue")
+        component: resolve(__dirname, "pages/404.vue"),
       });
-    }
-  }
+    },
+  },
 };
 export default merge(
   nuxtConfig,
   {
     auth: {
       strategies: {
-        discord
-      }
-    }
+        discord,
+      },
+    },
   },
   {
     env: {
-      ENDPOINT_URL: process.env.ENDPOINT_URL
-    }
+      ENDPOINT_URL: process.env.ENDPOINT_URL,
+    },
   }
 );
