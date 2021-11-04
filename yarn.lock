@@ -10775,7 +10775,7 @@ fsevents@^1.2.7:
     vue-property-decorator: 9.1.2
     vue-template-compiler: 2.6.14
     vue-toasted: 1.1.28
-    vuetify: 2.5.10
+    vuetify: 2.5.11
     vuex: 3.6.2
     vuex-module-decorators: 1.0.1
     vuex-persistedstate: 4.1.0
@@ -16439,12 +16439,12 @@ fsevents@^1.2.7:
   languageName: node
   linkType: hard
 
-"vuetify@npm:2.5.10":
-  version: 2.5.10
-  resolution: "vuetify@npm:2.5.10"
+"vuetify@npm:2.5.11":
+  version: 2.5.11
+  resolution: "vuetify@npm:2.5.11"
   peerDependencies:
     vue: ^2.6.4
-  checksum: 3cbb3cb96d63daffdf44ffe0e57c44fb8970eb74d196eaca9ca257990d560a97b6d21ca9415e24435bbb54057d89b3d2392d97e3bf3bb6efd16f1202e846c64d
+  checksum: 6880e86361d7b784096e2e68c6c5fc922b54ced31e0a970b9b11baa8af70e72a3da0d6869076fb012c2ea399c485053f599427ab5a6b49c48a1c33353b15b429
   languageName: node
   linkType: hard
 
