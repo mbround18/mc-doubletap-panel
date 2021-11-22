@@ -10804,7 +10804,7 @@ fsevents@^1.2.7:
     vue-toasted: 1.1.28
     vuetify: 2.6.0
     vuex: 3.6.2
-    vuex-module-decorators: 1.0.1
+    vuex-module-decorators: 1.2.0
     vuex-persistedstate: 4.1.0
     webpack: 5.64.2
   languageName: unknown
@@ -16493,13 +16493,13 @@ fsevents@^1.2.7:
   languageName: node
   linkType: hard
 
-"vuex-module-decorators@npm:1.0.1":
-  version: 1.0.1
-  resolution: "vuex-module-decorators@npm:1.0.1"
+"vuex-module-decorators@npm:1.2.0":
+  version: 1.2.0
+  resolution: "vuex-module-decorators@npm:1.2.0"
   peerDependencies:
     vue: ">=2"
-    vuex: 3
-  checksum: a8b91f6f87ae813ba17c9f31ad3aaaf51d085c51bbf31f240d2788f3413611003af6f3637a6ae5c576428ac1bb83211e46eec468a8406a0d84bc85e90706cec6
+    vuex: ">=3"
+  checksum: 12a4587f4fb877d1748acfa5acb7d1f4163280535aa1eb501a89c7ddc5f601ad717269265e6054988f53210d5c164877139719b0b99f6f7876397ff87354f990
   languageName: node
   linkType: hard
 
