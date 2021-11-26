@@ -10788,7 +10788,7 @@ fsevents@^1.2.7:
     moment: 2.29.1
     netlify-identity-widget: 1.9.2
     nuxt: 2.15.8
-    postcss: 8.4.1
+    postcss: 8.4.2
     postcss-nested: 5.0.6
     prettier: 2.5.0
     rxjs: 7.4.0
@@ -13281,14 +13281,14 @@ fsevents@^1.2.7:
   languageName: node
   linkType: hard
 
-"postcss@npm:8.4.1":
-  version: 8.4.1
-  resolution: "postcss@npm:8.4.1"
+"postcss@npm:8.4.2":
+  version: 8.4.2
+  resolution: "postcss@npm:8.4.2"
   dependencies:
     nanoid: ^3.1.30
     picocolors: ^1.0.0
     source-map-js: ^1.0.1
-  checksum: 89ede712ccca478f3d3bc4137eac8efa9cc434ab193ae5348dfba343ab5144faa39a71e3cf53e2b45bc01e705829259706f9610d7c7c46a7a3affccd56b3e74f
+  checksum: 5a95db721aa994910d432fe8e42adee9b3c4af4f63248c97cd5e36eab1cb04202642a21178f17281128f8be40974561d101a8e2d88c88d92cfa605126ec9bcfb
   languageName: node
   linkType: hard
 
