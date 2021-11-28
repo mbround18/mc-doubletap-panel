@@ -2224,16 +2224,16 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@nuxtjs/vuetify@npm:1.12.1":
-  version: 1.12.1
-  resolution: "@nuxtjs/vuetify@npm:1.12.1"
+"@nuxtjs/vuetify@npm:1.12.2":
+  version: 1.12.2
+  resolution: "@nuxtjs/vuetify@npm:1.12.2"
   dependencies:
     deepmerge: ^4.2.2
     sass: ~1.32.13
-    sass-loader: ^10.2.0
-    vuetify: ^2.5.3
-    vuetify-loader: ^1.7.2
-  checksum: e7f3df4aeb34b8fcfb3f99cacf5fd3de7e5e429f8b8b9ac5eda6a64a863ef0c9803f37b24b0fef262bab671f5e911df25848a976109e67142157a13cf501875d
+    sass-loader: ^12.3.0
+    vuetify: ^2.6
+    vuetify-loader: ^1.7.3
+  checksum: 2adb658dbbe113b6896ec4d3874a15b8b89fa6c077418812f7ffd9ff7173f1a64eeaab203d87a01d125e8737fdece453c96f544fbf352b793a26f5f3f7e54dff
   languageName: node
   linkType: hard
 
@@ -10871,7 +10871,7 @@ fsevents@^1.2.7:
     "@nuxtjs/eslint-module": 3.0.2
     "@nuxtjs/pwa": 3.3.5
     "@nuxtjs/tailwindcss": 4.2.1
-    "@nuxtjs/vuetify": 1.12.1
+    "@nuxtjs/vuetify": 1.12.2
     "@typescript-eslint/eslint-plugin": 5.4.0
     "@typescript-eslint/parser": 5.4.0
     "@vue/test-utils": 1.3.0
@@ -14364,7 +14364,7 @@ fsevents@^1.2.7:
   languageName: node
   linkType: hard
 
-"sass-loader@npm:10.2.0, sass-loader@npm:^10.2.0":
+"sass-loader@npm:10.2.0":
   version: 10.2.0
   resolution: "sass-loader@npm:10.2.0"
   dependencies:
@@ -14386,6 +14386,28 @@ fsevents@^1.2.7:
     sass:
       optional: true
   checksum: d53212e5d199cdd221a67046ab4276c352d56b50ca64347115b36e8ebbb2c68ec396a14d6cf5a08853c830a6b0ec1fd2b016cdc53cbe90a0332a908f50ec2043
+  languageName: node
+  linkType: hard
+
+"sass-loader@npm:^12.3.0":
+  version: 12.3.0
+  resolution: "sass-loader@npm:12.3.0"
+  dependencies:
+    klona: ^2.0.4
+    neo-async: ^2.6.2
+  peerDependencies:
+    fibers: ">= 3.1.0"
+    node-sass: ^4.0.0 || ^5.0.0 || ^6.0.0
+    sass: ^1.3.0
+    webpack: ^5.0.0
+  peerDependenciesMeta:
+    fibers:
+      optional: true
+    node-sass:
+      optional: true
+    sass:
+      optional: true
+  checksum: b755e6d5ceddb70d54334b53f70546b4afc9af5f9704cc0e2666894d0568bdaeccb2b07056bd35465c22c51c55e1d790023b32b9aa0977080403036ef6c47b29
   languageName: node
   linkType: hard
 
@@ -16590,9 +16612,9 @@ fsevents@^1.2.7:
   languageName: node
   linkType: hard
 
-"vuetify-loader@npm:^1.7.2":
-  version: 1.7.2
-  resolution: "vuetify-loader@npm:1.7.2"
+"vuetify-loader@npm:^1.7.3":
+  version: 1.7.3
+  resolution: "vuetify-loader@npm:1.7.3"
   dependencies:
     decache: ^4.6.0
     file-loader: ^6.2.0
@@ -16601,25 +16623,16 @@ fsevents@^1.2.7:
     vue-template-compiler: ^2.6.10
     vuetify: ^1.3.0 || ^2.0.0
     webpack: ^4.0.0 || ^5.0.0
-  checksum: 990b237d85728cfbd417e3b6f3d47b30271f1d0d817f7dc129098f04db0e707d621b51df6f1c3636219a4f550c3bdc17e9e39e3d1b6354b7401d840439d9a053
+  checksum: 81a31698101ec25e05bf36224af273c315a85787bb4ef41d0fe76f28c4c7d8d409f9ad75535b09b8ccae4cdef4e6fe80b19f148e23f351cd4fc36f9400049421
   languageName: node
   linkType: hard
 
-"vuetify@npm:2.6.0":
+"vuetify@npm:2.6.0, vuetify@npm:^2.6":
   version: 2.6.0
   resolution: "vuetify@npm:2.6.0"
   peerDependencies:
     vue: ^2.6.4
   checksum: ce28415e6b16561829292b844abbe53c4c4fd2bbd591fc6d59944b981769aae7c098da9299a9cf807d3a107e009f1d3e30f91525dd9ac02f2bde7a8fa8c227df
-  languageName: node
-  linkType: hard
-
-"vuetify@npm:^2.5.3":
-  version: 2.5.8
-  resolution: "vuetify@npm:2.5.8"
-  peerDependencies:
-    vue: ^2.6.4
-  checksum: 4bb0f8c2de18228b794d8c4a0c6b0eb6d6cfc58a5f8c0a4a45cecdd8abd9b53708e1de33d11ff12dc379358b6ecad6bf7bbd96506d1f1a8a0704ead0ce05495b
   languageName: node
   linkType: hard
 
