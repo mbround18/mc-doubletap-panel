@@ -2298,22 +2298,22 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@nuxtjs/auth-next@npm:5.0.0-1637745161.ea53f98":
-  version: 5.0.0-1637745161.ea53f98
-  resolution: "@nuxtjs/auth-next@npm:5.0.0-1637745161.ea53f98"
+"@nuxtjs/auth-next@npm:5.0.0-1641383466.aadb541":
+  version: 5.0.0-1641383466.aadb541
+  resolution: "@nuxtjs/auth-next@npm:5.0.0-1641383466.aadb541"
   dependencies:
-    "@nuxtjs/axios": ^5.13.0
-    axios: ^0.21.1
-    body-parser: ^1.19.0
+    "@nuxtjs/axios": ^5.13.6
+    axios: ^0.24.0
+    body-parser: ^1.19.1
     consola: ^2.15.3
     cookie: ^0.4.1
-    defu: ^3.2.2
+    defu: ^5.0.0
     hasha: ^5.2.2
     jwt-decode: ^3.1.2
     requrl: ^3.0.2
   peerDependencies:
     vue: "*"
-  checksum: 108fb4470ff9004c4187eed55803f026dd486e21b3180de41dbc3eba7f437c489d0f1844c1d9d795f91068581155e6da166850e89c7ea4bd189655dac2fadddc
+  checksum: 93697a11c2df0603a8538e1f38036b3b73bb3be5fc9d4b3a926d21641989f53794fe93414938cf4192c52e40a3e4211aca44fe8604cbb11d6938a44dfbaf00f1
   languageName: node
   linkType: hard
 
@@ -2333,7 +2333,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@nuxtjs/axios@npm:5.13.6, @nuxtjs/axios@npm:^5.13.0, @nuxtjs/axios@npm:^5.9.5":
+"@nuxtjs/axios@npm:5.13.6, @nuxtjs/axios@npm:^5.13.6, @nuxtjs/axios@npm:^5.9.5":
   version: 5.13.6
   resolution: "@nuxtjs/axios@npm:5.13.6"
   dependencies:
@@ -4387,6 +4387,15 @@ __metadata:
   languageName: node
   linkType: hard
 
+"axios@npm:^0.24.0":
+  version: 0.24.0
+  resolution: "axios@npm:0.24.0"
+  dependencies:
+    follow-redirects: ^1.14.4
+  checksum: 468cf496c08a6aadfb7e699bebdac02851e3043d4e7d282350804ea8900e30d368daa6e3cd4ab83b8ddb5a3b1e17a5a21ada13fc9cebd27b74828f47a4236316
+  languageName: node
+  linkType: hard
+
 "babel-code-frame@npm:^6.26.0":
   version: 6.26.0
   resolution: "babel-code-frame@npm:6.26.0"
@@ -4816,6 +4825,24 @@ __metadata:
   languageName: node
   linkType: hard
 
+"body-parser@npm:^1.19.1":
+  version: 1.19.1
+  resolution: "body-parser@npm:1.19.1"
+  dependencies:
+    bytes: 3.1.1
+    content-type: ~1.0.4
+    debug: 2.6.9
+    depd: ~1.1.2
+    http-errors: 1.8.1
+    iconv-lite: 0.4.24
+    on-finished: ~2.3.0
+    qs: 6.9.6
+    raw-body: 2.4.2
+    type-is: ~1.6.18
+  checksum: 9197a300a6580b8723c7b6b1e22cebd5ba47cd4a6fd45c153350efcde79293869ddee8d17d95fb52724812d649d89d62775faab072608d3243a0cbb00582234e
+  languageName: node
+  linkType: hard
+
 "boolbase@npm:^1.0.0, boolbase@npm:~1.0.0":
   version: 1.0.0
   resolution: "boolbase@npm:1.0.0"
@@ -5078,6 +5105,13 @@ __metadata:
   version: 3.1.0
   resolution: "bytes@npm:3.1.0"
   checksum: 7c3b21c5d9d44ed455460d5d36a31abc6fa2ce3807964ba60a4b03fd44454c8cf07bb0585af83bfde1c5cc2ea4bbe5897bc3d18cd15e0acf25a3615a35aba2df
+  languageName: node
+  linkType: hard
+
+"bytes@npm:3.1.1":
+  version: 3.1.1
+  resolution: "bytes@npm:3.1.1"
+  checksum: 949ab99a385d6acf4d2c69f1afc618615dc905936e0b0b9aa94a9e94d722baaba44d6a0851536585a0892ae4d462b5a270ccb1b04c774640742cbde5538ca328
   languageName: node
   linkType: hard
 
@@ -8035,6 +8069,16 @@ __metadata:
   languageName: node
   linkType: hard
 
+"follow-redirects@npm:^1.14.4":
+  version: 1.14.6
+  resolution: "follow-redirects@npm:1.14.6"
+  peerDependenciesMeta:
+    debug:
+      optional: true
+  checksum: 7fcdb089a733d2aa39041880790e9f772df009fcd0b243fee7e10acf0e14a8dab5208cf79eb1de35b9cc6033d4dde7f95becadfaa360c50d460b4c730b375e80
+  languageName: node
+  linkType: hard
+
 "for-in@npm:^1.0.2":
   version: 1.0.2
   resolution: "for-in@npm:1.0.2"
@@ -8836,6 +8880,19 @@ fsevents@^1.2.7:
     statuses: ">= 1.5.0 < 2"
     toidentifier: 1.0.0
   checksum: 5534b0ae08e77f5a45a2380f500e781f6580c4ff75b816cb1f09f99a290b57e78a518be6d866db1b48cca6b052c09da2c75fc91fb16a2fe3da3c44d9acbb9972
+  languageName: node
+  linkType: hard
+
+"http-errors@npm:1.8.1":
+  version: 1.8.1
+  resolution: "http-errors@npm:1.8.1"
+  dependencies:
+    depd: ~1.1.2
+    inherits: 2.0.4
+    setprototypeof: 1.2.0
+    statuses: ">= 1.5.0 < 2"
+    toidentifier: 1.0.1
+  checksum: d3c7e7e776fd51c0a812baff570bdf06fe49a5dc448b700ab6171b1250e4cf7db8b8f4c0b133e4bfe2451022a5790c1ca6c2cae4094dedd6ac8304a1267f91d2
   languageName: node
   linkType: hard
 
@@ -11111,7 +11168,7 @@ fsevents@^1.2.7:
     "@nuxt/typescript-build": 2.1.0
     "@nuxt/typescript-runtime": 2.1.0
     "@nuxtjs/auth": 4.9.1
-    "@nuxtjs/auth-next": 5.0.0-1637745161.ea53f98
+    "@nuxtjs/auth-next": 5.0.0-1641383466.aadb541
     "@nuxtjs/axios": 5.13.6
     "@nuxtjs/eslint-config": 8.0.0
     "@nuxtjs/eslint-config-typescript": 8.0.0
@@ -13950,6 +14007,13 @@ fsevents@^1.2.7:
   languageName: node
   linkType: hard
 
+"qs@npm:6.9.6":
+  version: 6.9.6
+  resolution: "qs@npm:6.9.6"
+  checksum: cb6df402bb8a3dbefa4bd46eba0dfca427079baca923e6b8d28a03e6bfb16a5c1dcdb96e69388f9c5813ac8ff17bb8bbca22f2ecd31fe1e344a55cb531b5fabf
+  languageName: node
+  linkType: hard
+
 "qs@npm:^6.9.4":
   version: 6.10.1
   resolution: "qs@npm:6.10.1"
@@ -14051,6 +14115,18 @@ fsevents@^1.2.7:
     iconv-lite: 0.4.24
     unpipe: 1.0.0
   checksum: 6343906939e018c6e633a34a938a5d6d1e93ffcfa48646e00207d53b418e941953b521473950c079347220944dc75ba10e7b3c08bf97e3ac72c7624882db09bb
+  languageName: node
+  linkType: hard
+
+"raw-body@npm:2.4.2":
+  version: 2.4.2
+  resolution: "raw-body@npm:2.4.2"
+  dependencies:
+    bytes: 3.1.1
+    http-errors: 1.8.1
+    iconv-lite: 0.4.24
+    unpipe: 1.0.0
+  checksum: c6f8d6a75c65c0a047f888cb29efc97f60fb36e950ba2cb31fefce694f98186e844a03367920faa7dc5bffaf33df08aee0b9dd935280e366439fa6492a5b163e
   languageName: node
   linkType: hard
 
@@ -16019,6 +16095,13 @@ fsevents@^1.2.7:
   languageName: node
   linkType: hard
 
+"toidentifier@npm:1.0.1":
+  version: 1.0.1
+  resolution: "toidentifier@npm:1.0.1"
+  checksum: 952c29e2a85d7123239b5cfdd889a0dde47ab0497f0913d70588f19c53f7e0b5327c95f4651e413c74b785147f9637b17410ac8c846d5d4a20a5a33eb6dc3a45
+  languageName: node
+  linkType: hard
+
 "totalist@npm:^1.0.0":
   version: 1.1.0
   resolution: "totalist@npm:1.1.0"
@@ -16250,7 +16333,7 @@ fsevents@^1.2.7:
   languageName: node
   linkType: hard
 
-"type-is@npm:^1.6.16, type-is@npm:~1.6.17":
+"type-is@npm:^1.6.16, type-is@npm:~1.6.17, type-is@npm:~1.6.18":
   version: 1.6.18
   resolution: "type-is@npm:1.6.18"
   dependencies:
