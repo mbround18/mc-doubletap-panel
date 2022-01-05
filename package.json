@@ -63,7 +63,7 @@
     "eslint-plugin-markdown": "2.2.1",
     "eslint-plugin-prettier": "4.0.0",
     "husky": "7.0.4",
-    "jest": "27.4.5",
+    "jest": "27.4.6",
     "postcss": "8.4.5",
     "prettier": "2.5.1",
     "sass": "1.45.2",
