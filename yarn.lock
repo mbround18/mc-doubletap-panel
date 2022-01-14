@@ -2298,22 +2298,22 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@nuxtjs/auth-next@npm:5.0.0-1642083611.1785b0f":
-  version: 5.0.0-1642083611.1785b0f
-  resolution: "@nuxtjs/auth-next@npm:5.0.0-1642083611.1785b0f"
+"@nuxtjs/auth-next@npm:5.0.0-1642152945.3bb6b5f":
+  version: 5.0.0-1642152945.3bb6b5f
+  resolution: "@nuxtjs/auth-next@npm:5.0.0-1642152945.3bb6b5f"
   dependencies:
     "@nuxtjs/axios": ^5.13.6
     axios: ^0.24.0
     body-parser: ^1.19.1
     consola: ^2.15.3
     cookie: ^0.4.1
-    defu: ^5.0.0
+    defu: ^5.0.1
     hasha: ^5.2.2
     jwt-decode: ^3.1.2
     requrl: ^3.0.2
   peerDependencies:
     vue: "*"
-  checksum: cdb4bffc0fd09a0c3bc31dfdb7a2715ca389efab5c38ca60f646e7f23f18e913e751d20c0d8da767de31f87a8acbc1c7dc2bcfdb733af01204753130b3de784d
+  checksum: 3ac97473b7a4305d9a9d658beddd79d033d2e8b54ae282025f061129edc8550d6efe28bae97b2b15c607afd9e72f092e3d61b1b45e061d30f64457d0bd8da5af
   languageName: node
   linkType: hard
 
@@ -6582,6 +6582,13 @@ __metadata:
   version: 5.0.0
   resolution: "defu@npm:5.0.0"
   checksum: 510798a2c29ac4888926161e76e149e7b837f2043c875fed432051ef80399e621cc62b0f9b5a925e03668bb4aa9c0dfe696cf2b7b546e0e11c0eb9ee5ec60da5
+  languageName: node
+  linkType: hard
+
+"defu@npm:^5.0.1":
+  version: 5.0.1
+  resolution: "defu@npm:5.0.1"
+  checksum: f65556c2e8aa7789080f04c1d52fd7188d8258d9bc7f673e5bedc6be33eb6150f41844ac96aec99c798e47eb9beb97dae03c24edd73d3ddc643e4c7c72124606
   languageName: node
   linkType: hard
 
@@ -11176,7 +11183,7 @@ fsevents@^1.2.7:
     "@nuxt/typescript-build": 2.1.0
     "@nuxt/typescript-runtime": 2.1.0
     "@nuxtjs/auth": 4.9.1
-    "@nuxtjs/auth-next": 5.0.0-1642083611.1785b0f
+    "@nuxtjs/auth-next": 5.0.0-1642152945.3bb6b5f
     "@nuxtjs/axios": 5.13.6
     "@nuxtjs/eslint-config": 8.0.0
     "@nuxtjs/eslint-config-typescript": 8.0.0
