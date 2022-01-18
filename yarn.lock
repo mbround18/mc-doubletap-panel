@@ -2298,9 +2298,9 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@nuxtjs/auth-next@npm:5.0.0-1642152945.3bb6b5f":
-  version: 5.0.0-1642152945.3bb6b5f
-  resolution: "@nuxtjs/auth-next@npm:5.0.0-1642152945.3bb6b5f"
+"@nuxtjs/auth-next@npm:5.0.0-1642502410.8e1c713":
+  version: 5.0.0-1642502410.8e1c713
+  resolution: "@nuxtjs/auth-next@npm:5.0.0-1642502410.8e1c713"
   dependencies:
     "@nuxtjs/axios": ^5.13.6
     axios: ^0.24.0
@@ -2313,7 +2313,7 @@ __metadata:
     requrl: ^3.0.2
   peerDependencies:
     vue: "*"
-  checksum: 3ac97473b7a4305d9a9d658beddd79d033d2e8b54ae282025f061129edc8550d6efe28bae97b2b15c607afd9e72f092e3d61b1b45e061d30f64457d0bd8da5af
+  checksum: 4920aecd4ad0e1250a45a7f780b02bfb18b377d05b9a8d12d030062ef0524b3d84ef86873de79b42d36c14196a80808061b6b56affcd16ba76b07e7fb9b532bd
   languageName: node
   linkType: hard
 
@@ -11178,7 +11178,7 @@ fsevents@^1.2.7:
     "@nuxt/typescript-build": 2.1.0
     "@nuxt/typescript-runtime": 2.1.0
     "@nuxtjs/auth": 4.9.1
-    "@nuxtjs/auth-next": 5.0.0-1642152945.3bb6b5f
+    "@nuxtjs/auth-next": 5.0.0-1642502410.8e1c713
     "@nuxtjs/axios": 5.13.6
     "@nuxtjs/eslint-config": 8.0.0
     "@nuxtjs/eslint-config-typescript": 8.0.0
