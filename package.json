@@ -20,7 +20,7 @@
   "dependencies": {
     "@nuxt/typescript-runtime": "2.1.0",
     "@nuxtjs/auth": "4.9.1",
-    "@nuxtjs/auth-next": "5.0.0-1642673266.c6a29dd",
+    "@nuxtjs/auth-next": "5.0.0-1643278128.1c7fef7",
     "@nuxtjs/axios": "5.13.6",
     "cookie": "0.4.1",
     "core-js": "3.20.3",
